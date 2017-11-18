@@ -60,8 +60,10 @@ var NoValidElementErr = errors.New("No valid HTML element")
 var NegativeDepthErr = errors.New("Tag depth must be positive number")
 
 type Tag struct {
-	Name     string
-	Attrs    map[string]string
+	Name string
+	// Classes  []string
+	// Attrs    map[string]string
+	Attrs    *AttrMap
 	Depth    int
 	Position []int
 	Type     TAG_TYPE
@@ -113,8 +115,6 @@ func (tg *TagHandler) Feed() error {
 			if err != nil {
 				return err
 			}
-			// tag := &Tag{Name: tagName, Depth: tg.Depth, Position: allTagsIndex[i], Type: VOID_TAG, Attrs: attrMap}
-			// tg.TagList = append(tg.TagList, tag)
 			voidStartTag := &Tag{Name: tagName, Depth: tg.Depth, Position: allTagsIndex[i], Type: VOID_START_TAG, Attrs: attrMap}
 			voidEndTag := &Tag{Name: tagName, Depth: tg.Depth, Position: allTagsIndex[i], Type: VOID_END_TAG}
 			tg.TagList = append(tg.TagList, voidStartTag, voidEndTag)
@@ -146,7 +146,6 @@ func (tg *TagHandler) Feed() error {
 }
 
 func IsPairs(pTag, lTag *Tag) bool {
-	// return (pTag.Name == lTag.Name && pTag.Type == START_TAG && lTag.Type == END_TAG && pTag.Depth == lTag.Depth) || (pTag == lTag && pTag.Type == VOID_TAG)
 	return pTag.Name == lTag.Name && pTag.Depth == lTag.Depth && ((pTag.Type == START_TAG && lTag.Type == END_TAG) || (pTag.Type == VOID_START_TAG && lTag.Type == VOID_END_TAG))
 
 }

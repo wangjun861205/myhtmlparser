@@ -2,11 +2,14 @@ package myhtmlparser
 
 import (
 	"regexp"
+	"strings"
 )
 
 var scriptRe = regexp.MustCompile(`(?ms)<script.*?>.*?</script>`)
 var tagRe = regexp.MustCompile(`<(/?)([\w-]+)\s?(.*?)>`)
-var tagAllAttrsRe = regexp.MustCompile(`\s?([\w-_]+)(=["'].*?["'])?\s?`)
+
+// var tagAllAttrsRe = regexp.MustCompile(`\s?([\w-_]+)(=["'].*?["'])?\s?`)
+var tagAllAttrsRe = regexp.MustCompile(`\s?([\w-_]+)=?(?:["'](.*?)["'])?\s?`)
 var equationAttrRe = regexp.MustCompile(`=\s?["'](.*?)["']`)
 var singleAttrRe = regexp.MustCompile(`[^\s\\]+`)
 
@@ -34,31 +37,17 @@ func FindTag(s string) (closeToken, name, attrStr string, index []int, valid boo
 	return
 }
 
-func FindAttrs(s string) (map[string]string, error) {
-	attrMap := make(map[string]string)
-	// allAttrs := tagAttrsRe.FindAllString(s, -1)
+func FindAttrs(s string) (*AttrMap, error) {
+	attrMap := NewAttrMap()
 	allAttrs := tagAllAttrsRe.FindAllStringSubmatch(s, -1)
 	for _, attr := range allAttrs {
-		value := ""
-		if attr[2] != "" {
-			value = equationAttrRe.FindStringSubmatch(attr[2])[1]
+		attrName, attrValues := attr[1], attr[2]
+		if attrValues != "" {
+			attrValueList := strings.Split(attrValues, " ")
+			for _, value := range attrValueList {
+				attrMap.Add(attrName, value)
+			}
 		}
-		attrMap[attr[1]] = value
 	}
 	return attrMap, nil
-}
-
-func FindQueryAttrs(s string) map[string]string {
-	attrMap := make(map[string]string)
-	allAttrs := queryAllAttrRe.FindAllString(s, -1)
-	for _, attr := range allAttrs {
-		if queryEquationAttrRe.MatchString(attr) {
-			group := queryEquationAttrRe.FindStringSubmatch(attr)
-			attrMap[group[1]] = group[2]
-		} else {
-			group := querySingleAttrRe.FindStringSubmatch(attr)
-			attrMap[group[1]] = ""
-		}
-	}
-	return attrMap
 }

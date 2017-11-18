@@ -99,37 +99,12 @@ func GenerateNodeTree(currentNode *Node, tagList []*Tag, html string) {
 	}
 }
 
-func FilterTree(root *Node, filter Filter) []*Node {
-	nodeList := make([]*Node, 0, 128)
-	if ok := filter(root); ok {
-		nodeList = append(nodeList, root)
-	}
-	for _, child := range root.Children {
-		matchChildrenList := FilterTree(child, filter)
-		nodeList = append(nodeList, matchChildrenList...)
-	}
-	return nodeList
-}
-
 func PrintTree(root *Node) {
 	fmt.Println(root.Name, root.Attrs)
 	for _, child := range root.Children {
 		PrintTree(child)
 	}
 }
-
-// func Search(root *Node, queryStr string) ([]*Node, error) {
-// 	switch {
-// 	case queryAttrRe.MatchString(queryStr):
-// 		nodeGroup := queryAttrRe.FindStringSubmatch(queryStr)
-// 		nodeName, nodeAttrStr := nodeGroup[1], nodeGroup[2]
-// 		queryMap := FindQueryAttrs(nodeAttrStr)
-// 		matchList := FilterTree(root, AttrFilter(nodeName, queryMap))
-// 		return matchList, nil
-// 	default:
-// 		return []*Node{}, NotValidQueryErr
-// 	}
-// }
 
 func SearchByQueryList(root *Node, queryList []*Query) []*Node {
 	var query *Query

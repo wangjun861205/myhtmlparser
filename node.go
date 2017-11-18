@@ -1,14 +1,20 @@
 package myhtmlparser
 
+import "fmt"
+
 type Node struct {
 	Name        string
-	Attrs       map[string]string
+	Attrs       *AttrMap
 	Content     string
 	Parent      *Node
 	Children    []*Node
 	PrevSibling *Node
 	NextSibling *Node
 	Siblings    []*Node
+}
+
+func (node *Node) String() string {
+	return fmt.Sprintf("name: %s, attrs: %v", node.Name, node.Attrs)
 }
 
 func GenerateNode(startTag, endTag *Tag, html string) *Node {
@@ -31,13 +37,4 @@ func GenerateNode(startTag, endTag *Tag, html string) *Node {
 		}
 		return node
 	}
-}
-
-func MatchAttrs(node *Node, attrMap map[string]string) bool {
-	for k, v := range attrMap {
-		if attrVal, ok := node.Attrs[k]; !ok || attrVal != v {
-			return false
-		}
-	}
-	return true
 }

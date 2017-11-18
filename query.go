@@ -18,7 +18,7 @@ var TargetMap = map[string]QUERY_TARGET{
 type Query struct {
 	Target   QUERY_TARGET
 	NodeName string
-	AttrList [][]string
+	AttrMap  *AttrMap
 }
 
 func NewQueryList(queryStr string) ([]*Query, error) {
@@ -28,20 +28,20 @@ func NewQueryList(queryStr string) ([]*Query, error) {
 		return queryList, NotValidQueryErr
 	}
 	for _, subquery := range allQuery {
-		query := &Query{}
+		query := &Query{AttrMap: NewAttrMap()}
 		query.Target = TargetMap[subquery[1]]
 		switch subquery[2] {
 		case "":
 			query.NodeName = subquery[3]
 		case ".":
-			query.AttrList = append(query.AttrList, []string{"class", subquery[3]})
+			query.AttrMap.Add("class", subquery[3])
 		case "#":
-			query.AttrList = append(query.AttrList, []string{"id", subquery[3]})
+			query.AttrMap.Add("id", subquery[3])
 		}
 		if subquery[4] != "" {
 			allAttrs := queryAttrRe.FindAllStringSubmatch(subquery[4], -1)
 			for _, attr := range allAttrs {
-				query.AttrList = append(query.AttrList, []string{attr[1], attr[2]})
+				query.AttrMap.Add(attr[1], attr[2])
 			}
 		}
 		queryList = append(queryList, query)
@@ -53,12 +53,7 @@ func (query *Query) Match(node *Node) bool {
 	if query.NodeName != "" && query.NodeName != node.Name {
 		return false
 	}
-	for _, attrPair := range query.AttrList {
-		if val, ok := node.Attrs[attrPair[0]]; !ok || val != attrPair[1] {
-			return false
-		}
-	}
-	return true
+	return node.Attrs.Contains(query.AttrMap)
 }
 
 func (query *Query) SearchAll(node *Node) []*Node {

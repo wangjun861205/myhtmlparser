@@ -22,13 +22,14 @@ func TestParser(t *testing.T) {
 	cursor := NewCursor(string(html[:]))
 	err = cursor.Parse()
 	// PrintTree(cursor.Root)
-	l, err := Search(cursor.Root, "#menuHorizontal>li>a")
+	l, err := Search(cursor.Root, "li")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	fmt.Println(len(l))
 	for _, n := range l {
-		fmt.Println(n.Name, n.Attrs["href"], n.Content)
+		attrs, _ := n.Attrs.Out("class")
+		fmt.Println(n.Name, attrs)
 	}
 }
