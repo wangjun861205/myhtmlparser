@@ -1,4 +1,4 @@
-package myhtmlparser
+package notbearparser
 
 import (
 	"regexp"
@@ -6,18 +6,18 @@ import (
 )
 
 var scriptRe = regexp.MustCompile(`(?ms)<script.*?>.*?</script>`)
-var tagRe = regexp.MustCompile(`<(/?)([\w-]+)\s?(.*?)>`)
+var commentRe = regexp.MustCompile(`(?ms)<!--.*?-->`)
+var styleRe = regexp.MustCompile(`(?ms)<style.*?>.*?</style>`)
 
-// var tagAllAttrsRe = regexp.MustCompile(`\s?([\w-_]+)(=["'].*?["'])?\s?`)
+var optionAutoCompleteRe = regexp.MustCompile(`(?s)<option.*?>.*?(</option>)?\n`)
+
+var valueQuoteRe = regexp.MustCompile(`\svalue=(\d+)`)
+var tagRe = regexp.MustCompile(`<(/?)([\w][\w-]*)\s?([^>]*)>`)
 var tagAllAttrsRe = regexp.MustCompile(`\s?([\w-_]+)=?(?:["'](.*?)["'])?\s?`)
-var equationAttrRe = regexp.MustCompile(`=\s?["'](.*?)["']`)
-var singleAttrRe = regexp.MustCompile(`[^\s\\]+`)
 
-// var queryRe = regexp.MustCompile(`([>,\s])?([\.#])?([\w_-]*)(?:\[([\w_-]+)=["'](.*?)["']\])?`)
 var queryRe = regexp.MustCompile(`([>,\s])?([\.#])?([\w_-]*)(?:\[(.*?)\])?`)
 var queryAttrRe = regexp.MustCompile(`([\w-_]+)=?(?:["'](.*?)["'])?,?\s?`)
 
-// var queryAttrRe = regexp.MustCompile(`([\w-]*?)\[(.+?)\]`)
 var queryAllAttrRe = regexp.MustCompile(`[^\s,]+`)
 var queryEquationAttrRe = regexp.MustCompile(`([^\s]+)=([^\s,]+),?`)
 var querySingleAttrRe = regexp.MustCompile(`([^\s,]+),?`)

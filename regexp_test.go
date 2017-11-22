@@ -1,4 +1,4 @@
-package myhtmlparser
+package notbearparser
 
 var testStr = `<div class="test_class" id="test_id" data-pk="test-pk" disable test>`
 var queryStr = `div[id=test_id, class=test_class, disable, hidden]`

@@ -1,4 +1,4 @@
-package myhtmlparser
+package notbearparser
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 )
 
 func TestParser(t *testing.T) {
-	htmlFile, err := os.Open("testhtml.html")
+	htmlFile, err := os.Open("html.html")
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -21,15 +21,17 @@ func TestParser(t *testing.T) {
 	}
 	cursor := NewCursor(string(html[:]))
 	err = cursor.Parse()
-	// PrintTree(cursor.Root)
-	l, err := Search(cursor.Root, "li")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	fmt.Println(len(l))
+	// PrintTree(cursor.Root)
+	l, err := Search(cursor.Root, "option[value='2015']")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	for _, n := range l {
-		attrs, _ := n.Attrs.Out("class")
-		fmt.Println(n.Name, attrs)
+		fmt.Println(n.Name, n.Attrs, n.Content)
 	}
 }

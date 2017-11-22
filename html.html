@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+<!-- FROM REDDOT -->
+<!-- blackbird -->
+
+       <meta http-equiv="content-type" content="text/html; charset=UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+       <link rel="stylesheet" type="text/css" media="print" href="/blog/wp-content/themes/mo_blackbird/printable.css?v=1371581318" />
+
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<link rel="stylesheet" type="text/css" href="/blog/wp-content/themes/mo_blackbird/style.css" />
+
+
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@MotorcycleCom">
+
+
+<script type="text/javascript">
+  var siteUrl = 'http://www.motorcycle.com/blog/';
+</script>
+
+
+        <script type='text/javascript' src='http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/scripts/scripts.js'></script>
+        <!-- wordpress wp_head -->
+
+<!-- This site is optimized with the Yoast SEO plugin v5.3.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/www.motorcycle.com\/","name":"Motorcycle.com","potentialAction":{"@type":"SearchAction","target":"http:\/\/www.motorcycle.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Motorcycle.com &raquo; Feed" href="http://www.motorcycle.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="Motorcycle.com &raquo; Comments Feed" href="http://www.motorcycle.com/comments/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.motorcycle.com\/blog\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.1"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b===c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<script type='text/javascript' src='http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/scripts/scripts.js?ver=20161129205226'></script>
+<link rel='https://api.w.org/' href='http://www.motorcycle.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.motorcycle.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.motorcycle.com/blog/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.8.1" />
+<!-- ******* DEBUGGER:  ******* -->
+<meta property="fb:pages" content="111497812234210" />
+<!-- ConsolidatedFooters Headers -->
+<script type="text/javascript">
+  var vglnk = { api_url: '//api.viglink.com/api',
+                key: 'e9201d98d6f3b22e0a1015a67409f18a' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = ('https:' == document.location.protocol ? vglnk.api_url :
+             '//cdn.viglink.com/api') + '/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
+"https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,"script","dataLayer","GTM-WM87NJ");</script>
+<!-- End Google Tag Manager -->
+<script src="//load.sumome.com/" data-sumo-site-id="54aba111f1c1238ed824b4348ee9fd62285616f3509d606652fa36c855d46e68" async="async"></script>
+<!-- /ConsolidatedFooters Headers -->
+        <!-- /wordpress wp_head -->
+
+
+<!-- PageHeaders from Reddot -->
+
+        <title>Motorcycle Reviews, Prices and Specs</title>
+        <meta name='keywords' content='motorcycle reviews, 	motorcycles, motorcycle prices, motorcycle prices, motorcycle specs,
+		motorcycle pictures, motorcycle videos'>
+        <meta name='description' content=' Motorcycle Reviews, Prices and Specs. Get the latest reviews of
+		Motorcycles from motorcycle.com readers, as well as Motorcycle prices, and specifications.	'>
+        <base href='http://www.motorcycle.com/specs/' />
+ 	<script type='text/javascript' language='JavaScript' src='js/validate.js'></script>
+	<!-- <scr ipt type='text/javascript' language='JavaScript' src='js/jquery-1.2.1.pack.js'></scr ipt>  -->
+    <script src="js/ajaxfileupload-vs.js" type="text/javascript"></script>
+	<script type='text/javascript' language='JavaScript'>
+        iCounter = 0;
+        sk="a50ab2f855694e687d890ca686cf312c";
+        filepath = "files/uploads/thumb/"+sk;
+        stop=20;
+        lstName="imagelist";
+        app='mot';
+	</script>
+
+
+
+<!-- PageHeaders from Reddot END -->
+
+<script type="text/javascript">
+  WebFontConfig = {
+	google: { families: [ 'Oswald:400,300' ] }
+  };
+  (function() {
+	var wf = document.createElement('script');
+	wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+		'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	wf.type = 'text/javascript';
+	wf.async = 'true';
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(wf, s);
+  })();
+
+</script>
+
+        <link rel="alternate" type="application/rss+xml" href="http://www.motorcycle.com/feed" title="Motorcycle.com latest posts" />
+        <link rel="alternate" type="application/rss+xml" href="http://www.motorcycle.com/comments/feed" title="Motorcycle.com latest comments" />
+        <link rel="pingback" href="http://www.motorcycle.com/blog/xmlrpc.php" />
+<!--[if lt IE 9]>
+<script>
+// HTML 5 Shiv. for older IE - should be an if statement?  /
+(function(){if(!/*@cc_on!@*/0)return;var e="abbr,article,aside,audio,bb,canvas,datagrid,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(',');for(var i=0;i<e.length;i++){document.createElement(e[i])}})()
+</script>
+<![endif]-->
+
+<link href="https://plus.google.com/101848431124337308074" rel="publisher" />
+<!-- dfp -->
+
+<!-- gpt sync -->
+<script type="text/javascript">
+(function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+})();
+</script>
+<!--  end gpt sync -->
+
+
+<!-- end DFP -->
+
+<script type="text/javascript">
+googletag.cmd.push(function() {
+
+	// set AdSense attributes
+	googletag.pubads().set('adsense_background_color','#FFFFFF');
+	googletag.pubads().set('adsense_border_color','#ECECEC');
+	googletag.pubads().set('adsense_link_color','#0983B6');
+	googletag.pubads().set('adsense_text_color','#000000');
+	googletag.pubads().set('adsense_url_color','#CE0000');
+
+    googletag.defineSlot('/1030735/MCL_com_x35_PS', [580, 90], 'MCL_com_x35_PS').
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_300x250_TopRight_PS', [300, 250], 'MCL_com_300x250_TopRight_PS').
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_320x186_PS_Mobile_Yieldmo', [  [320, 186], [320, 50], [320, 150], 'fluid'  ], 'MCL_com_320x186_PS_Mobile_Yieldmo').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [99999, 99999]).addSize([642, 10], [99999, 99999]).addSize([0, 0], [  [320, 186], [320, 50], [320, 150], 'fluid'  ]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_300x250_BottomRight_PS', [300, 250], 'MCL_com_300x250_BottomRight_PS').
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_250x250_BottomLeft_PS', [250, 250], 'MCL_com_250x250_BottomLeft_PS').
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_728x90_Top_PS', [728, 90], 'MCL_com_728x90_Top_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [728, 90]).addSize([642, 10], [728, 90]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_300x250_Sidebar1_PS', [300, 600], 'MCL_com_300x250_Sidebar1_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [300, 600]).addSize([642, 10], [300, 600]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_300x90_Spotlight_PS', [300, 90], 'MCL_com_300x90_Spotlight_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [300, 90]).addSize([642, 10], [300, 90]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_300x250_Sidebar2_PS', [300, 250], 'MCL_com_300x250_Sidebar2_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [300, 250]).addSize([642, 10], [300, 250]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_300x250_Top-Video_PS', [300, 250], 'MCL_com_300x250_Top-Video_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [300, 250]).addSize([642, 10], [300, 250]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_186x65_TopRight_PS', [186, 65], 'MCL_com_186x65_TopRight_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [186, 65]).addSize([642, 10], [186, 65]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_186x65_Summit2_PS', [186, 65], 'MCL_com_186x65_Summit2_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [186, 65]).addSize([642, 10], [186, 65]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_300x150_Insurance_PS', [300, 150], 'MCL_com_300x150_Insurance_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [300, 150]).addSize([642, 10], [300, 150]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_320x50_Mobile_Bottom_PS', [320, 50], 'MCL_com_320x50_Mobile_Bottom_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [99999, 99999]).addSize([642, 10], [99999, 99999]).addSize([0, 0], [320, 50]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_x60_PS', [500, 500], 'MCL_com_x60_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [500, 500]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_x61_PS', [1658, 1000], 'MCL_com_x61_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [1658, 1000]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+    googletag.defineSlot('/1030735/MCL_com_x62_PS', [999, 416], 'MCL_com_x62_PS').
+        defineSizeMapping(googletag.sizeMapping().addSize([1024, 10], [999, 416]).addSize([0, 0], [99999, 99999]).build()).
+        addService(googletag.pubads());
+
+
+
+googletag.pubads().setTargeting("folder1", "specs");
+googletag.pubads().setTargeting("filename", "index_html");
+googletag.pubads().setTargeting("specs", "true");
+googletag.pubads().setTargeting("sitename", "motorcycle_com");
+
+googletag.pubads().enableSingleRequest();
+googletag.pubads().enableSyncRendering();
+googletag.pubads().collapseEmptyDivs();
+googletag.enableServices();
+
+});
+</script>
+
+
+<script src="/scripts/player/jwplayer.js"></script>
+<script src="/scripts/playerscripts.min.js"></script>
+
+
+
+
+<script>
+/*!  google Analytics */
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-30657-76']);
+_gaq.push(['_setDomainName', 'motorcycle.com']);
+_gaq.push(['_trackPageview']); (function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript';
+ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+(document.getElementsByTagName('head')[0] ||
+document.getElementsByTagName('body')[0]).appendChild(ga); })();
+</script>
+
+<!-- BEGIN Sailthru Horizon Meta Information -->
+<meta name='sailthru.date' content='1970-01-01 01:01:01'/>
+<meta name='sailthru.author' content=''/>
+<!-- END Sailthru Horizon Meta Information -->
+
+
+<style media="all" type="text/css">
+@import "http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/css/specs.css?v=1460404165";
+</style>
+
+<style media="print" type="text/css">
+@import "http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/css/specs-print.css?v=1371581318";
+</style>
+
+
+
+
+
+</head>
+
+<body class="">
+
+
+<div class="ad" id="MCL_com_x60_PS">
+<script type="text/javascript">
+googletag.cmd.push(function (){ googletag.display("MCL_com_x60_PS");});
+</script>
+</div>
+
+<div id="fb-root"></div>
+<div id="container" class="hfeed">
+<div class="ad" id="MCL_com_x61_PS">
+<script type="text/javascript">
+googletag.cmd.push(function (){ googletag.display("MCL_com_x61_PS");});
+</script>
+</div>
+
+<header id="header" class="vsadspot header nolinks">
+
+<section class="text_wrapper nolinks" id="header-features">
+<li id="summit-1">
+    <a href="http://www.motorcycle.com/manufacturer/honda/first-look-2018-honda-gold-wing-and-gold-wing-tour.html" class="link">
+<img data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/10/102417-2018-Honda-Gold-Wing-Unveil-28-186x114.jpg" src="http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/img/spacer.gif" class="photo" border="0" alt="First Look: 2018 Honda Gold Wing and Gold Wing Tour" width="186" height="115" style="display: inline-block;">
+    </a>
+<h3><a href="http://www.motorcycle.com/manufacturer/honda/first-look-2018-honda-gold-wing-and-gold-wing-tour.html">First Look: 2018 Honda Gold Wing</a></h3>
+</li>
+<li id="summit-2">
+    <a href="http://www.motorcycle.com/manufacturer/aprilia/manufactureraprilia2018-aprilia-shiver-900-first-ride-review-html.html" class="link">
+<img data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/10/BJN23669-2-186x114.jpg" src="http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/img/spacer.gif" class="photo" border="0" alt="2018 Aprilia Shiver 900 First Ride Review" width="186" height="115" style="display: inline-block;">
+    </a>
+<h3><a href="http://www.motorcycle.com/manufacturer/aprilia/manufactureraprilia2018-aprilia-shiver-900-first-ride-review-html.html">2018 Aprilia Shiver 900</a></h3>
+</li>
+<li id="summit-3">
+    <a href="http://www.motorcycle.com/manufacturer/kawasaki/manufacturerkawasaki2018-kawasaki-klx250-first-ride-review-html.html" class="link">
+<img data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/10/101217-2018-kawasaki-klx250-f-186x114.jpg" src="http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/img/spacer.gif" class="photo" border="0" alt="2018 Kawasaki KLX250 First Ride Review" width="186" height="115" style="display: inline-block;">
+    </a>
+<h3><a href="http://www.motorcycle.com/manufacturer/kawasaki/manufacturerkawasaki2018-kawasaki-klx250-first-ride-review-html.html">2018 Kawasaki KLX250 First Ride</a></h3>
+</li>
+<li id="summit-4">
+    <a href="http://www.motorcycle.com/shoot-outs/retro-roadster-shootout-2017" class="link">
+<img data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/08/081517-Retro-Roadsters-Revisited-f-186x114.jpg" src="http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/img/spacer.gif" class="photo" border="0" alt="Retro Roadsters Revisited: BMW R nineT Pure vs Honda CB1100EX vs Triumph Bonneville T120 Black" width="186" height="115" style="display: inline-block;">
+    </a>
+<h3><a href="http://www.motorcycle.com/shoot-outs/retro-roadster-shootout-2017">Retro Roadsters Revisited</a></h3>
+</li>
+<li>
+<div class="ad" id="MCL_com_186x65_TopRight_PS" >
+	<script type="text/javascript">
+	googletag.cmd.push(function (){
+		googletag.display("MCL_com_186x65_TopRight_PS");
+	});
+	</script>
+</div>
+</li>
+</ul>
+<script type="text/javascript">
+function summitArticle(url,image,text,position) {
+	var html = '<a href="' + url + '" class="link"><img src="' + image + '" width="186" height="115"/></a><h3><a href="' + url + '">' + text + '</a></h3>';
+	document.getElementById('summit-' + position).innerHTML=html;
+}
+
+function defaultSummitArticle(position) {
+	var articles = [
+		[ 'http://www.motorcycle.com/manufacturer/honda/first-look-2018-honda-gold-wing-and-gold-wing-tour.html', 'http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/10/102417-2018-Honda-Gold-Wing-Unveil-28-186x114.jpg', 'First Look: 2018 Honda Gold Wing' ],[ 'http://www.motorcycle.com/manufacturer/aprilia/manufactureraprilia2018-aprilia-shiver-900-first-ride-review-html.html', 'http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/10/BJN23669-2-186x114.jpg', '2018 Aprilia Shiver 900' ],[ 'http://www.motorcycle.com/manufacturer/kawasaki/manufacturerkawasaki2018-kawasaki-klx250-first-ride-review-html.html', 'http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/10/101217-2018-kawasaki-klx250-f-186x114.jpg', '2018 Kawasaki KLX250 First Ride' ],[ 'http://www.motorcycle.com/shoot-outs/retro-roadster-shootout-2017', 'http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/08/081517-Retro-Roadsters-Revisited-f-186x114.jpg', 'Retro Roadsters Revisited' ],	];
+
+	var article = articles[position - 1];
+	var url = article[0];
+	var image = article[1];
+	var text = article[2];
+
+	summitArticle(url, image, text, position);
+}
+</script>
+<div class="ad" id="MCL_com_186x65_Summit2_PS">
+<script type="text/javascript">
+googletag.cmd.push(function (){
+	googletag.display("MCL_com_186x65_Summit2_PS");
+});
+</script>
+</div>
+</section>
+
+		<div class="text_wrapper logo_wrapper">
+
+       <a href="http://www.motorcycle.com" id="logo"><img width="217" height="43" src="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2013/03/logo.png" /></a>
+<span id="MCL_com_728x90_Top_PS" class="ad" >
+<script type="text/javascript">
+googletag.cmd.push(function (){
+googletag.display("MCL_com_728x90_Top_PS");
+});
+</script>
+</span>
+        </div><!-- logo wrapper -->
+
+		<div class="mobile-menu-toggle">
+					<span></span>
+					<span></span>
+					<span></span>
+		</div><!-- END OF .mobile-menu-toggle  -->
+
+		<nav id="nav" class="text_wrapper nav">
+			<ul class="desktop navigation"><li class="dropdown"><span class="link">Brands</span><div class="dropdown-nav"><section id="brands-list" class="section manufacturers-list"><ul id="menu-makes-menu" class=""><li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243 Aprilia"><a href="http://www.motorcycle.com/manufacturer/aprilia.html">Aprilia</a></li>
+<li id="menu-item-239" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-239 BMW"><a href="http://www.motorcycle.com/manufacturer/bmw.html">BMW</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-313 Brammo"><a href="http://www.motorcycle.com/manufacturer/brammo.html">Brammo</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-314 Buell"><a href="http://www.motorcycle.com/manufacturer/buell.html">Buell</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-315 Can-Am-|-BRP"><a href="http://www.motorcycle.com/manufacturer/brp.html">Can-Am | BRP</a></li>
+<li id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241 Ducati"><a href="http://www.motorcycle.com/manufacturer/ducati.html">Ducati</a></li>
+<li id="menu-item-233" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-233 Harley-Davidson"><a href="http://www.motorcycle.com/manufacturer/harley-davidson.html">Harley-Davidson</a></li>
+<li id="menu-item-234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-234 Honda"><a href="http://www.motorcycle.com/manufacturer/honda.html">Honda</a></li>
+<li id="menu-item-242" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242 Husqvarna"><a href="http://www.motorcycle.com/manufacturer/husqvarna.html">Husqvarna</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-316 Hyosung"><a href="http://www.motorcycle.com/manufacturer/hyosung.html">Hyosung</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-317 Indian"><a href="http://www.motorcycle.com/manufacturer/indian.html">Indian</a></li>
+<li id="menu-item-237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-237 Kawasaki"><a href="http://www.motorcycle.com/manufacturer/kawasaki.html">Kawasaki</a></li>
+<li id="menu-item-238" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-238 KTM"><a href="http://www.motorcycle.com/manufacturer/ktm.html">KTM</a></li>
+<li id="menu-item-245" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-245 Kymco"><a href="http://www.motorcycle.com/manufacturer/kymco.html">Kymco</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318 Moto-Guzzi"><a href="http://www.motorcycle.com/manufacturer/moto-guzzi.html">Moto Guzzi</a></li>
+<li id="menu-item-319" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-319 MV-Agusta"><a href="http://www.motorcycle.com/manufacturer/mv-agusta.html">MV Agusta</a></li>
+<li id="menu-item-320" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-320 Piaggio"><a href="http://www.motorcycle.com/manufacturer/piaggio.html">Piaggio</a></li>
+<li id="menu-item-246" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-246 Star"><a href="http://www.motorcycle.com/manufacturer/star.html">Star</a></li>
+<li id="menu-item-236" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-236 Suzuki"><a href="http://www.motorcycle.com/manufacturer/suzuki.html">Suzuki</a></li>
+<li id="menu-item-240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-240 Triumph"><a href="http://www.motorcycle.com/manufacturer/triumph.html">Triumph</a></li>
+<li id="menu-item-321" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-321 Vespa"><a href="http://www.motorcycle.com/manufacturer/vespa.html">Vespa</a></li>
+<li id="menu-item-244" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244 Victory"><a href="http://www.motorcycle.com/manufacturer/victory.html">Victory</a></li>
+<li id="menu-item-235" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-235 Yamaha"><a href="http://www.motorcycle.com/manufacturer/yamaha.html">Yamaha</a></li>
+<li id="menu-item-322" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-322 Zero"><a href="http://www.motorcycle.com/manufacturer/zero.html">Zero</a></li>
+<li id="menu-item-247" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-247 Others"><a href="http://www.motorcycle.com/manufacturer/others.html">Others</a></li>
+</ul></section></div></li><li class="dropdown"><span class="link">Types</span><div class="dropdown-nav"><section class="section category-list"><ul id="menu-category-menu" class=""><li id="menu-item-248" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-248 Sportbikes"><a href="http://www.motorcycle.com/categories/sportbikes.html">Sportbikes</a></li>
+<li id="menu-item-249" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-249 Standard"><a href="http://www.motorcycle.com/categories/standard.html">Standard</a></li>
+<li id="menu-item-250" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-250 Cruiser"><a href="http://www.motorcycle.com/categories/cruiser.html">Cruiser</a></li>
+<li id="menu-item-259" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-259 Electric"><a href="http://www.motorcycle.com/categories/electric.html">Electric</a></li>
+<li id="menu-item-251" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-251 Touring"><a href="http://www.motorcycle.com/categories/touring.html">Touring</a></li>
+<li id="menu-item-252" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-252 Sport-Touring"><a href="http://www.motorcycle.com/categories/sport-touring.html">Sport-Touring</a></li>
+<li id="menu-item-253" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-253 Off-Road"><a href="http://www.motorcycle.com/categories/off-road.html">Off-Road</a></li>
+<li id="menu-item-254" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-254 On-Off-Road"><a href="http://www.motorcycle.com/categories/on-off-road.html">On-Off-Road</a></li>
+<li id="menu-item-255" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-255 Scooter"><a href="http://www.motorcycle.com/categories/scooter.html">Scooter</a></li>
+<li id="menu-item-256" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-256 Touring-Scooter"><a href="http://www.motorcycle.com/categories/touring-scooter.html">Touring Scooter</a></li>
+<li id="menu-item-257" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-257 Track"><a href="http://www.motorcycle.com/categories/track.html">Track</a></li>
+<li id="menu-item-258" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-258 Youth"><a href="http://www.motorcycle.com/categories/youth.html">Youth</a></li>
+<li id="menu-item-260" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-260 Other"><a href="http://www.motorcycle.com/categories/other.html">Other</a></li>
+</ul></section></div></li><li id="menu-item-965" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-965 Classifieds"><a href="http://www.motorcycle.com/classifieds/motorcycle-classifieds.html">Classifieds</a></li>
+<li id="menu-item-583" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item menu-item-583 Specs"><a href="http://www.motorcycle.com/specs/">Specs</a></li>
+<li id="menu-item-967" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-967 Bike-Reviews"><a href="http://www.motorcycle.com/manufacturer/reviews.html">Bike Reviews</a></li>
+<li id="menu-item-962" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-962 News"><a href="http://blog.motorcycle.com/">News</a></li>
+<li id="menu-item-954" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-954 Videos"><a href="http://www.motorcycle.com/videos.html">Videos</a></li>
+<li id="menu-item-968" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-968 Top-10"><a href="http://www.motorcycle.com/top-10">Top 10</a></li>
+<li id="menu-item-1019" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1019 Insurance"><a href="http://www.motorcycle.com/buyers-guide/motorcycle-insurance.html">Insurance</a></li>
+</ul>		</nav>
+		<nav class="text_wrapper subnav" id="subnav">
+			<span class="search-link open-search icon"><!-- -->&nbsp;</span>
+			<form id="google-cse-searchbox-form" action="http://www.motorcycle.com/search.html" style="display:none">
+<input type="hidden" name="cx" value="partner-pub-7865546952023728:8148640120">
+<input type="hidden" value="FORID:11" name="cof">
+<input type="hidden" value="ISO-8859-1" name="ie">
+<input type="text" onFocus="if(this.value=='Enter Search Keyword') this.value=''" value="Enter Search Keyword" name="q">
+<input type="submit" value="Search" alt="search" name="sa">
+</form>
+			<span class="social">
+<ul class="list">
+	<li><a id="facebook-link" href="http://www.facebook.com/Motorcyclecom" target="_blank"><span class="sprite">Facebook</span></a></li>
+    <li><a id="twitter-link" href="http://twitter.com/MotorcycleCom" target="_blank"><span class="sprite">Twitter</span></a></li>
+    <li><a id="youtube-link" href="http://www.youtube.com/motorcycle" target="_blank"><span class="sprite">Youtube</span></a></li>
+    <li><a id="google-plus-link" href="https://plus.google.com/101848431124337308074/posts" target="_blank"><span class="sprite">Google Plus</span></a></li>
+    <li class="rss-link"><a id="rss-link" href="http://feeds.feedburner.com/Motorcyclefeed" target="_blank"><span class="sprite">RSS</span></a></li>
+
+    <li>
+        <div id="newsletter-link" class="newsletter-link"><span class="sprite">Newsletter</span></div>
+        <div id="newsletter-popup" style="display: none;">
+            Join the Motorcycle.com Weekly Newsletter to keep up to date on all things motorcycling.
+            <br>
+            <br>
+		<section id="newsletter" class="section noprint nolinks">
+<form method="post" action="http://email.motorcycle.com/newsletter-signup/" class="form">
+        <input type="hidden" name="form[subscribeCheck]" value="1" />
+        <input type="hidden" name="form[source]" value="wp_generic" />
+		<input type="text"  name="form[email]" placeholder="Enter Your Email" class="text" required >
+	<input type="submit" name="joon_newsletters" value="subscribe" style="opacity: 0;">
+	<div class="newsletter-link close">X</div>
+</form>
+</section>
+
+        </div>
+    </li>
+</ul>
+</span>
+			<ul class="desktop"><li class="dropdown"><span class="link">Products</span><div class="dropdown-nav"><section class="section"><div><ul id="menu-product-menu" class=""><li id="menu-item-634" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-634 All-Product-Reviews"><a href="http://www.motorcycle.com/products/">All Product Reviews</a></li>
+<li id="menu-item-1018" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1018 Insurance-Guides"><a href="http://www.motorcycle.com/buyers-guide/motorcycle-insurance.html">Insurance Guides</a></li>
+<li id="menu-item-1015" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1015 Shipping-Guides"><a href="http://www.motorcycle.com/./shipping">Shipping Guides</a></li>
+<li id="menu-item-631" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-631 Parts-Guides"><a href="http://www.motorcycle.com/./parts">Parts Guides</a></li>
+<li id="menu-item-1013" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1013 Helmet-Guides"><a href="http://www.motorcycle.com/./helmets">Helmet Guides</a></li>
+<li id="menu-item-1016" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1016 Tire-Guides"><a href="http://www.motorcycle.com/./tires">Tire Guides</a></li>
+<li id="menu-item-1012" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1012 GPS-Guides"><a href="http://www.motorcycle.com/./gps">GPS Guides</a></li>
+<li id="menu-item-1011" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1011 Apparel-Guides"><a href="http://www.motorcycle.com/./apparel">Apparel Guides</a></li>
+<li id="menu-item-1010" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1010 Accessory-Guides"><a href="http://www.motorcycle.com/./accessories">Accessory Guides</a></li>
+</ul></div></section></div></li><li id="menu-item-969" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-969 Incentives"><a href="http://www.motorcycle.com/motorcycle-incentives.html">Incentives</a></li>
+<li id="menu-item-970" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-970 Dealers"><a href="http://www.motorcycle.com/dealers/motorcycle-dealers.html">Dealers</a></li>
+<li id="menu-item-637" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-637 Events"><a href="http://www.motorcycle.com/events/">Events</a></li>
+<li id="menu-item-2741" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2741 Safety"><a href="http://www.motorcycle.com/rider-safety/rider-training-safety.html">Safety</a></li>
+<li id="menu-item-971" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-971 Babes"><a href="http://www.motorcycle.com/babes/index.html">Babes</a></li>
+<li id="menu-item-963" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-963 How-To"><a href="http://www.motorcycle.com/how-to/">How-To</a></li>
+<li id="menu-item-964" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-964 Forums"><a href="http://www.motorcycle.com/forum/">Forums</a></li>
+</ul>		</nav><!-- nav -->
+
+
+</header><!-- #header -->
+
+
+<!-- ConsolidatedFooters Body Top w/o buffer -->
+<script type="text/javascript">
+    var xl8_script = document.createElement("script");
+    xl8_script.src = "http://loadus.exelator.com/load/?p=239&g=101&c=1625263&ctg=motorcycle&cmake=All&cmodel=All&j=d";
+    xl8_script.type = "text/javascript";
+    xl8_script.async = true;
+    document.body.appendChild(xl8_script);
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WM87NJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- /ConsolidatedFooters Body Top w/o buffer -->
+
+
+        <div id="content" class="text_wrapper stickem-container">
+
+<div id="MCL_com_x62_PS" class="ad">
+<script type="text/javascript">
+googletag.cmd.push(function (){ googletag.display("MCL_com_x62_PS");});
+</script>
+<!-- dropdown ad goes here --></div>
+	<div class="text_wrapper lead-feature" id="lead-feature">
+	<div class="main-column-left"></div>
+    	<div class="main-column-right-wrapper"><div class="text main-column-right"></div></div>
+	</div>
+<!-- end lead-feature -->
+
+
+	<div id="main-content_wrapper">
+        <div id="main-content">
+
+<!-- VS-SPLIT -->
+
+<div class="specs index">
+
+<div class="page_title">
+	<a href="/specs/">
+		<h2><img src="/specs/sites/mot/images/titles/title-specs.gif" alt="Start a New Search" title="Start a New Search" border="0"></h2>
+	</a>
+	<span class="title_text">Looking for a specific make, model or year of motorcycle,
+		and how it compares to the competition? Looking to design your own?
+		Use our Bike Finder, below, to get everything you need.
+	</span>
+</div>
+
+
+
+<div class="promo_area">
+
+	<div class="intro">
+
+		<span class='ad' id="MCL_com_300x250_TopRight_PS">
+			<script type="text/javascript">
+googletag.cmd.push(function (){ googletag.display("MCL_com_300x250_TopRight_PS");});
+</script>
+		</span>
+
+		<span class="text">
+				<h2>Motorcycle Specs, Reviews, and Quotes</h2>
+				<strong>Research & Review Motorcycles</strong>
+
+				<div class="text">
+					Research the motorcycle you're looking for including its specifications,
+					user reviews, professional reviews<!--, and get a <a href="">motorcycle
+					quote</a> from local dealers -->. Compare the specs of one bike to another,
+					or view the latest photos and videos of the motorcycle. Use the drop-down
+					menu below to find the motorcycle you are looking for, or use the
+					listings below to see the most popular bikes as rated by our users.
+					<br />
+					<br />
+					You can also view the <a href="http://www.motorcycle.com/specs/2018.html">Most Popular 2018 Motorcycles</a>
+					as rated by our users.
+				</div>
+		</span>
+
+	</div><!-- end intro -->
+
+<br/>
+</div><!-- end promo_area -->
+
+<div class="body_content">
+
+	<div class="categories specs_results">
+		<div class="border_wrapper">
+
+			<div class="subnavigation search_menu">
+				<ul>
+					<li><a  target="_blank" href="https://ad.doubleclick.net/ddm/trackclk/N339001.2181304VERTICALSCOPE/B9617523.130635182;dc_trk_aid=303440614;dc_trk_cid=69992907;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=">Request a Quote</a></li>
+					<li><a href="http://www.motorcycle.com/specs/print.php"><img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-print-specs.gif" border="0">Print This Page</a></li>
+					<li><a href="http://www.motorcycle.com/specs/email.php"><img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-email-friend.gif" border="0">E-mail to a Friend</a></li>
+				</ul>
+
+
+			</div><!-- end search menu -->
+
+			<div id="MCL_com_320x186_PS_Mobile_Yieldmo">
+				<script>
+					googletag.cmd.push(function(){
+						googletag.display('MCL_com_320x186_PS_Mobile_Yieldmo');
+					});
+				</script>
+			</div>
+
+			<h2>Motorcycle Finder </h2>
+
+			<div class="text_wrapper">
+
+				<span class="picture">
+					<img id='indexTrimImage' src='http://motorcycle.com.vsassets.com/specs/sites/mot/images/data/normal/2016_Aprilia_TuonoV41100_Factory.jpg' border='0' alt='2016 Aprilia Tuono V4 1100 Factory ABS'>
+				</span>
+
+				<FORM name='theform' method=post>
+
+				<span class="text">
+
+					<ul class="specs">
+						<li><strong>Manufacturer</strong>
+						<select id="MakeId" name="MakeId" class="dropdown_text" onchange="javascript:get_NextDropdown(1)">
+						<option value="349"  >AlphaSports
+<option value="350"  >American IronHorse
+<option value="20" selected >Aprilia
+<option value="811"  >Bennche
+<option value="857"  >BETA
+<option value="405"  >Big Bear Choppers
+<option value="365"  >Big Dog
+<option value="12"  >BMW
+<option value="831"  >Brammo
+<option value="15"  >Buell
+<option value="829"  >California Scooter Co.
+<option value="389"  >Can-Am | BRP
+<option value="1370"  >CFMOTO
+<option value="1526"  >CSC Motorcycles
+<option value="24"  >Ducati
+<option value="373"  >E-ton
+<option value="1457"  >Erik Buell Racing
+<option value="408"  >Fischer
+<option value="830"  >Flyscooters
+<option value="858"  >GAS GAS
+<option value="479"  >Genuine Scooter Co.
+<option value="10"  >Harley-Davidson
+<option value="2"  >Honda
+<option value="399"  >Husaberg
+<option value="330"  >Husqvarna
+<option value="390"  >Hyosung
+<option value="423"  >Indian
+<option value="3"  >Kawasaki
+<option value="21"  >KTM
+<option value="27"  >Kymco
+<option value="770"  >Lambretta
+<option value="828"  >Lance
+<option value="22"  >Moto Guzzi
+<option value="1525"  >Motus
+<option value="391"  >MV Agusta
+<option value="331"  >MZ
+<option value="348"  >Norton
+<option value="792"  >Peirspeed
+<option value="17"  >Piaggio
+<option value="23"  >Polaris
+<option value="406"  >QLINK
+<option value="1340"  >Royal Enfield
+<option value="826"  >Saxon Motorcycle
+<option value="398"  >Schwinn
+<option value="4"  >Suzuki
+<option value="480"  >SYM
+<option value="388"  >Tomberlin
+<option value="771"  >Tomos
+<option value="16"  >Triumph
+<option value="392"  >United Motors
+<option value="327"  >Ural
+<option value="754"  >Vectrix
+<option value="328"  >Vento
+<option value="18"  >Vespa
+<option value="11"  >Victory
+<option value="1"  >Yamaha
+<option value="827"  >Zero
+
+						</select>
+						</li>
+						<li>
+						<strong>Category</strong>
+						<select id="ModelType" name="ModelType" class="dropdown_text" onchange="javascript:get_NextDropdown(2)">
+						<option value='Off-Road'  >Off-Road</option>
+<option value='On-Off Road'  >On-Off Road</option>
+<option value='Scooter'  >Scooter</option>
+<option value='Sport' selected >Sport</option>
+<option value='Sport-Touring'  >Sport-Touring</option>
+<option value='Standard'  >Standard</option>
+<option value='Touring Scooter'  >Touring Scooter</option>
+<option value='Track'  >Track</option>
+
+						</select>
+						</li>
+						<li>
+						<strong>Year</strong>
+						<select id="ModelYear" name="year" class="dropdown_text" onchange="javascript:get_NextDropdown(3)">
+						<option value=2016 selected >2016</option>
+<option value=2015  >2015</option>
+<option value=2014  >2014</option>
+<option value=2013  >2013</option>
+<option value=2012  >2012</option>
+<option value=2011  >2011</option>
+<option value=2010  >2010</option>
+<option value=2009  >2009</option>
+<option value=2008  >2008</option>
+<option value=2007  >2007</option>
+<option value=2006  >2006</option>
+<option value=2005  >2005</option>
+<option value=2004  >2004</option>
+
+						</select>
+						</li>
+						<li>
+						<strong>Model</strong>
+						<select id="TrimId" name="TrimId" class="dropdown_text" onchange="javascript:get_TrimImage()">
+						<option value=185975  >Dorsoduro 750 ABS</option>
+<option value=185967  >RSV4 RR</option>
+<option value=183934  >RSV4 RF</option>
+<option value=199554  >RSV4 RF LE</option>
+<option value=183935  >Tuono V4 1100 RR ABS</option>
+<option value=183936 selected >Tuono V4 1100 Factory ABS</option>
+
+						</select>
+						</li>
+					</ul>
+
+					<span>
+						<input name='get_specs' value='Find Spec' class='submit' type='image' src='/specs/sites/mot/images/button-find-specs.gif' alt='Find Spec' title='Find Spec'>
+					</span>
+					<div class="clear">&nbsp;<!-- --></div>
+
+				</span>
+
+				</FORM>
+
+			</div><!-- end text_wrapper -->
+
+			<div class="clear"><!-- -->&nbsp;</div>
+
+				<div class="feature">
+		<h2>Featured Motorcycles</h2><br/>
+    	<table border="0" cellpadding="0" cellspacing="0" style="text-align:center;">
+    	<tbody>
+    		<tr>
+	    			<td><a href="http://www.motorcycle.com/specs/yamaha/sport-touring/2017/fj/09.html"><img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/thumbs/120/2017_Yamaha_FJ_09.jpg"/><div>2017 Yamaha FJ 09</div></a></td>
+		<td><a href="http://www.motorcycle.com/specs/triumph/standard/2017/bonneville-t120/base.html"><img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/thumbs/120/2016_Triumph_Bonneville_T120_Base.jpg"/><div>2017 Triumph Bonneville T120</div></a></td>
+		<td><a href="http://www.motorcycle.com/specs/harley-davidson/standard/2017/sportster-reg/roadster.html"><img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/thumbs/120/2017_Harley-Davidson_Sportster_Roadster.jpg"/><div>2017 Harley-Davidson Sportster&#174; Roadster</div></a></td>
+		<td><a href="http://www.motorcycle.com/specs/ducati/standard/2017/scrambler/full-throttle.html"><img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/thumbs/120/2016_Ducati_Scrambler_FullThrottle.jpg"/><div>2017 Ducati Scrambler Full Throttle</div></a></td>
+
+    		</tr>
+    	</tbody>
+    	</table>
+	</div><!-- end feature -->
+
+
+		</div><!-- end feature -->
+
+	</div><!-- end specs_results -->
+
+
+
+<div class='ad' id="MCL_com_x35_PS">
+	<script type='text/javascript'>
+	googletag.cmd.push(function (){ googletag.display("MCL_com_x35_PS");});
+	</script>
+</div>
+<br/>
+	<div class="categories user_links">
+
+		<h4>Motorcycle.com User Reviews</h4>
+
+		<div class="text_wrapper">
+
+				<span class="picture">
+					<a href="/specs/write-reviews.php"><img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/button-write-review-picture.jpg" border="0" alt="Write a Review"></a>
+				</span>
+
+				<span class="text">
+					<ul>
+
+			<li class="alt1"><a href="http://www.motorcycle.com/specs/honda/chopper/2010/fury/base.html" class="group">2010 Honda Fury </a>
+				<a href="http://www.motorcycle.com/specs/honda/chopper/2010/fury/base/p2.html#7198">Honda Fury</a>
+			</li>
+			<li class="alt2"><a href="http://www.motorcycle.com/specs/yamaha/cruiser/2008/v-star-1100/classic.html" class="group">2008 Yamaha V Star 1100 Classic</a>
+				<a href="http://www.motorcycle.com/specs/yamaha/cruiser/2008/v-star-1100/classic/p3.html#7197">08 vstar</a>
+			</li>
+			<li class="alt1"><a href="http://www.motorcycle.com/specs/honda/chopper/2011/fury-tm/base.html" class="group">2011 Honda Fury&trade; </a>
+				<a href="http://www.motorcycle.com/specs/honda/chopper/2011/fury-tm/base.html#7196">2011 honda fury.</a>
+			</li>
+			<li class="alt2"><a href="http://www.motorcycle.com/specs/ktm/sport/2015/super-duke/1290-r-abs.html" class="group">2015 KTM Super Duke 1290 R ABS</a>
+				<a href="http://www.motorcycle.com/specs/ktm/sport/2015/super-duke/1290-r-abs.html#7195">KTM 1290r</a>
+			</li>
+			<li class="alt1"><a href="http://www.motorcycle.com/specs/harley-davidson/standard/2008/sportster-reg/883-low.html" class="group">2008 Harley-Davidson Sportster&reg; 8...</a>
+				<a href="http://www.motorcycle.com/specs/harley-davidson/standard/2008/sportster-reg/883-low.html#7194">Couldnt be Happie...</a>
+			</li>
+			<li class="alt2"><a href="http://www.motorcycle.com/specs/harley-davidson/standard/2008/sportster-reg/883.html" class="group">2008 Harley-Davidson Sportster&reg; 883</a>
+				<a href="http://www.motorcycle.com/specs/harley-davidson/standard/2008/sportster-reg/883.html#7193">Awesome Bike. Soli...</a>
+			</li>
+					</ul>
+				</span>
+
+		</div>
+
+	</div><!-- end categories links -->
+
+
+
+	<div class="categories classifications" >
+
+		<div class="text_wrapper subnavigation year_menu">
+			<div class="text">
+				<ul><li><a href="http://www.motorcycle.com/specs/2017.html">2017</a></li><li><a href="http://www.motorcycle.com/specs/2016.html">2016</a></li><li><a href="http://www.motorcycle.com/specs/2015.html">2015</a></li><li><a href="http://www.motorcycle.com/specs/2014.html">2014</a></li><li><a href="http://www.motorcycle.com/specs/2013.html">2013</a></li><li><a href="http://www.motorcycle.com/specs/2012.html">2012</a></li><li><a href="http://www.motorcycle.com/specs/2011.html">2011</a></li><li><a href="http://www.motorcycle.com/specs/2010.html">2010</a></li><li><a href="http://www.motorcycle.com/specs/2009.html">2009</a></li><li><a href="http://www.motorcycle.com/specs/2008.html">2008</a></li><li><a href="http://www.motorcycle.com/specs/2007.html">2007</a></li><li><a href="http://www.motorcycle.com/specs/2006.html">2006</a></li><li><a href="http://www.motorcycle.com/specs/2005.html">2005</a></li><li><a href="http://www.motorcycle.com/specs/2004.html">2004</a></li></ul>
+			</div>
+			<strong>Motorcycles by Year</strong>
+		</div><!-- end year_menu -->
+
+		<span class="text classifications">
+
+				<h4>Specs by Category</h4>
+				<ul>
+									<li>
+					<a href="http://www.motorcycle.com/specs/sport.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-sport.jpg" border="0" />
+						<strong>Sportbikes</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/ducati/sport/2017/supersport/s.html" class="first" title="2017 Ducati SuperSport S">2017 Ducati SuperSport S</a>
+						<a href="http://www.motorcycle.com/specs/suzuki/sport/2017/gsx-r/1000r.html" class="second" title="2017 Suzuki GSX-R 1000R">2017 Suzuki GSX-R 1000R</a>
+						<a href="http://www.motorcycle.com/specs/suzuki/sport/2017/gsx-r/750.html" class="third" title="2017 Suzuki GSX-R 750">2017 Suzuki GSX-R 750</a>
+						<a href="http://www.motorcycle.com/specs/ducati/sport/2017/supersport/base.html" class="fourth" title="2017 Ducati SuperSport ">2017 Ducati SuperSport </a>
+						<a href="http://www.motorcycle.com/specs/suzuki/sport/2017/gsx-r/600.html" class="fifth" title="2017 Suzuki GSX-R 600">2017 Suzuki GSX-R 600</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/standard.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-standard.jpg" border="0" />
+						<strong>Standard</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/yamaha/standard/2017/xsr/900.html" class="first" title="2017 Yamaha XSR 900">2017 Yamaha XSR 900</a>
+						<a href="http://www.motorcycle.com/specs/suzuki/standard/2017/sv/650.html" class="second" title="2017 Suzuki SV 650">2017 Suzuki SV 650</a>
+						<a href="http://www.motorcycle.com/specs/yamaha/standard/2017/fz/10.html" class="third" title="2017 Yamaha FZ 10">2017 Yamaha FZ 10</a>
+						<a href="http://www.motorcycle.com/specs/honda/standard/2017/cb1100/ex.html" class="fourth" title="2017 Honda CB1100 EX">2017 Honda CB1100 EX</a>
+						<a href="http://www.motorcycle.com/specs/triumph/standard/2017/bonneville-t120/base.html" class="fifth" title="2017 Triumph Bonneville T120 ">2017 Triumph Bonneville T1...</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/cruiser.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-cruiser.jpg" border="0" />
+						<strong>Cruiser</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/suzuki/cruiser/2017/boulevard/m109r-b-o-s-s-.html" class="first" title="2017 Suzuki Boulevard M109R B.O.S.S.">2017 Suzuki Boulevard M109...</a>
+						<a href="http://www.motorcycle.com/specs/harley-davidson/cruiser/2017/dyna-reg/street-bob.html" class="second" title="2017 Harley-Davidson Dyna&reg; Street Bob">2017 Harley-Davidson Dyna&reg;...</a>
+						<a href="http://www.motorcycle.com/specs/victory/cruiser/2017/high-ball-reg/base.html" class="third" title="2017 Victory High-Ball&reg; ">2017 Victory High-Ball&reg; </a>
+						<a href="http://www.motorcycle.com/specs/kawasaki/cruiser/2017/vulcan-reg-s/abs-se.html" class="fourth" title="2017 Kawasaki Vulcan&reg; S ABS SE">2017 Kawasaki Vulcan&reg; S AB...</a>
+						<a href="http://www.motorcycle.com/specs/victory/cruiser/2017/gunner-reg/base.html" class="fifth" title="2017 Victory Gunner&reg; ">2017 Victory Gunner&reg; </a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/chopper.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-chopper.jpg" border="0" />
+						<strong>Chopper</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/honda/chopper/2017/fury-reg/base.html" class="first" title="2017 Honda Fury&reg; ">2017 Honda Fury&reg; </a>
+						<a href="http://www.motorcycle.com/specs/honda/chopper/2017/fury-reg/abs.html" class="second" title="2017 Honda Fury&reg; ABS">2017 Honda Fury&reg; ABS</a>
+						<a href="http://www.motorcycle.com/specs/honda/chopper/2016/fury-reg/base.html" class="third" title="2016 Honda Fury&reg; ">2016 Honda Fury&reg; </a>
+						<a href="http://www.motorcycle.com/specs/honda/chopper/2016/fury-reg/abs.html" class="fourth" title="2016 Honda Fury&reg; ABS">2016 Honda Fury&reg; ABS</a>
+						<a href="http://www.motorcycle.com/specs/honda/chopper/2015/fury-reg/base.html" class="fifth" title="2015 Honda Fury&reg; ">2015 Honda Fury&reg; </a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/touring.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-touring.jpg" border="0" />
+						<strong>Touring</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/indian/touring/2017/chieftain-reg/base.html" class="first" title="2017 Indian Chieftain&reg; ">2017 Indian Chieftain&reg; </a>
+						<a href="http://www.motorcycle.com/specs/indian/touring/2017/chief-reg/vintage.html" class="second" title="2017 Indian Chief&reg; Vintage">2017 Indian Chief&reg; Vintage</a>
+						<a href="http://www.motorcycle.com/specs/harley-davidson/touring/2017/road-glide-reg/special.html" class="third" title="2017 Harley-Davidson Road Glide&reg; Special">2017 Harley-Davidson Road ...</a>
+						<a href="http://www.motorcycle.com/specs/harley-davidson/touring/2017/trike/tri-glide-ultra.html" class="fourth" title="2017 Harley-Davidson Trike Tri Glide Ultra">2017 Harley-Davidson Trike...</a>
+						<a href="http://www.motorcycle.com/specs/indian/touring/2017/roadmaster-reg/base.html" class="fifth" title="2017 Indian Roadmaster&reg; ">2017 Indian Roadmaster&reg; </a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/sport-touring.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-sport-touring.jpg" border="0" />
+						<strong>Sport-Touring</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/polaris/sport-touring/2017/slingshot-reg/sl.html" class="first" title="2017 Polaris SLINGSHOT&reg; SL">2017 Polaris SLINGSHOT&reg; SL</a>
+						<a href="http://www.motorcycle.com/specs/bmw/sport-touring/2017/r/1200-rt.html" class="second" title="2017 BMW R 1200 RT">2017 BMW R 1200 RT</a>
+						<a href="http://www.motorcycle.com/specs/can-am/sport-touring/2017/spyder-f3/base.html" class="third" title="2017 Can-Am Spyder F3 ">2017 Can-Am Spyder F3 </a>
+						<a href="http://www.motorcycle.com/specs/yamaha/sport-touring/2017/fjr/1300es.html" class="fourth" title="2017 Yamaha FJR 1300ES">2017 Yamaha FJR 1300ES</a>
+						<a href="http://www.motorcycle.com/specs/can-am/sport-touring/2017/spyder-rt/limited.html" class="fifth" title="2017 Can-Am Spyder RT Limited">2017 Can-Am Spyder RT Limi...</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/on-off-road.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-on-off-road.jpg" border="0" />
+						<strong>On-Off Road</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/suzuki/on-off-road/2017/dr/200s.html" class="first" title="2017 Suzuki DR 200S">2017 Suzuki DR 200S</a>
+						<a href="http://www.motorcycle.com/specs/ktm/on-off-road/2017/adventure/1090-r.html" class="second" title="2017 KTM Adventure 1090 R">2017 KTM Adventure 1090 R</a>
+						<a href="http://www.motorcycle.com/specs/ktm/on-off-road/2017/690-enduro/r.html" class="third" title="2017 KTM 690 Enduro R">2017 KTM 690 Enduro R</a>
+						<a href="http://www.motorcycle.com/specs/bmw/on-off-road/2017/r/1200-gs-adventure.html" class="fourth" title="2017 BMW R 1200 GS Adventure">2017 BMW R 1200 GS Adventure</a>
+						<a href="http://www.motorcycle.com/specs/bmw/on-off-road/2017/f/700-gs.html" class="fifth" title="2017 BMW F 700 GS">2017 BMW F 700 GS</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/off-road.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-off-road.jpg" border="0" />
+						<strong>Off-Road</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/ktm/off-road/2017/exc/500-f.html" class="first" title="2017 KTM EXC 500 F">2017 KTM EXC 500 F</a>
+						<a href="http://www.motorcycle.com/specs/ktm/off-road/2017/sx/125.html" class="second" title="2017 KTM SX 125">2017 KTM SX 125</a>
+						<a href="http://www.motorcycle.com/specs/ktm/off-road/2017/exc/450-f-six-days.html" class="third" title="2017 KTM EXC 450 F Six Days">2017 KTM EXC 450 F Six Days</a>
+						<a href="http://www.motorcycle.com/specs/yamaha/off-road/2017/yz/250x.html" class="fourth" title="2017 Yamaha YZ 250X">2017 Yamaha YZ 250X</a>
+						<a href="http://www.motorcycle.com/specs/honda/off-road/2017/crf-reg/450r.html" class="fifth" title="2017 Honda CRF&reg; 450R">2017 Honda CRF&reg; 450R</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/scooter.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-scooter.jpg" border="0" />
+						<strong>Scooter</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/yamaha/scooter/2017/smax/base.html" class="first" title="2017 Yamaha Smax ">2017 Yamaha Smax </a>
+						<a href="http://www.motorcycle.com/specs/lance/scooter/2017/havana-classic/125.html" class="second" title="2017 Lance Havana Classic 125">2017 Lance Havana Classic ...</a>
+						<a href="http://www.motorcycle.com/specs/suzuki/scooter/2017/burgman/200.html" class="third" title="2017 Suzuki Burgman 200">2017 Suzuki Burgman 200</a>
+						<a href="http://www.motorcycle.com/specs/honda/scooter/2017/pcx/150.html" class="fourth" title="2017 Honda PCX 150">2017 Honda PCX 150</a>
+						<a href="http://www.motorcycle.com/specs/yamaha/scooter/2017/vino/classic.html" class="fifth" title="2017 Yamaha Vino Classic">2017 Yamaha Vino Classic</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/touring-scooter.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-touring-scooter.jpg" border="0" />
+						<strong>Touring Scooter</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/suzuki/touring-scooter/2017/burgman/650-executive.html" class="first" title="2017 Suzuki Burgman 650 Executive">2017 Suzuki Burgman 650 Ex...</a>
+						<a href="http://www.motorcycle.com/specs/kymco/touring-scooter/2017/xciting/500-ri-abs.html" class="second" title="2017 KYMCO Xciting 500 Ri ABS">2017 KYMCO Xciting 500 Ri ...</a>
+						<a href="http://www.motorcycle.com/specs/piaggio/touring-scooter/2017/bv/350-ie-abs.html" class="third" title="2017 Piaggio BV 350 ie ABS">2017 Piaggio BV 350 ie ABS</a>
+						<a href="http://www.motorcycle.com/specs/kymco/touring-scooter/2016/xciting/500-ri-abs.html" class="fourth" title="2016 KYMCO Xciting 500 Ri ABS">2016 KYMCO Xciting 500 Ri ...</a>
+						<a href="http://www.motorcycle.com/specs/suzuki/touring-scooter/2016/burgman/400-abs.html" class="fifth" title="2016 Suzuki Burgman 400 ABS">2016 Suzuki Burgman 400 ABS</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/track.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-track.jpg" border="0" />
+						<strong>Track</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/mv-agusta/track/2017/f4/rc.html" class="first" title="2017 MV Agusta F4 RC">2017 MV Agusta F4 RC</a>
+						<a href="http://www.motorcycle.com/specs/kawasaki/track/2017/ninja-reg-h2-tm/r.html" class="second" title="2017 Kawasaki Ninja&reg; H2&trade; R">2017 Kawasaki Ninja&reg; H2&trade; R</a>
+						<a href="http://www.motorcycle.com/specs/kawasaki/track/2016/ninja-reg/h2-r.html" class="third" title="2016 Kawasaki Ninja&reg; H2 R">2016 Kawasaki Ninja&reg; H2 R</a>
+						<a href="http://www.motorcycle.com/specs/mv-agusta/track/2016/f4/rc.html" class="fourth" title="2016 MV Agusta F4 RC">2016 MV Agusta F4 RC</a>
+						<a href="http://www.motorcycle.com/specs/kawasaki/track/2015/ninja-reg/h2-r.html" class="fifth" title="2015 Kawasaki Ninja&reg; H2 R">2015 Kawasaki Ninja&reg; H2 R</a>
+					</div>
+				</li>
+
+				<li>
+					<a href="http://www.motorcycle.com/specs/youth.html" class="subtitle">
+						<img src="http://motorcycle.com.vsassets.com/specs/sites/mot/images/icons/icon-youth.jpg" border="0" />
+						<strong>Youth</strong>
+					</a>
+					<div class="links">
+						<a href="http://www.motorcycle.com/specs/honda/youth/2017/crf-reg/50f.html" class="first" title="2017 Honda CRF&reg; 50F">2017 Honda CRF&reg; 50F</a>
+						<a href="http://www.motorcycle.com/specs/husqvarna/youth/2017/tc/65.html" class="second" title="2017 Husqvarna TC 65">2017 Husqvarna TC 65</a>
+						<a href="http://www.motorcycle.com/specs/yamaha/youth/2017/tt-r/50e.html" class="third" title="2017 Yamaha TT-R 50E">2017 Yamaha TT-R 50E</a>
+						<a href="http://www.motorcycle.com/specs/yamaha/youth/2017/pw/50.html" class="fourth" title="2017 Yamaha PW 50">2017 Yamaha PW 50</a>
+						<a href="http://www.motorcycle.com/specs/ktm/youth/2017/sx/50.html" class="fifth" title="2017 KTM SX 50">2017 KTM SX 50</a>
+					</div>
+				</li>
+
+
+				</ul>
+
+		</span>
+
+		<span class="text manufacturer_list">
+			<h4>Specs by Manufacturer</h4>
+			<ul>
+				<li><a href='http://www.motorcycle.com/specs/alphasports.html' >AlphaSports</a></li><li><a href='http://www.motorcycle.com/specs/american-ironhorse.html' >American IronHorse</a></li><li><a href='http://www.motorcycle.com/specs/aprilia.html' >Aprilia</a></li><li><a href='http://www.motorcycle.com/specs/bennche.html' >Bennche</a></li><li><a href='http://www.motorcycle.com/specs/beta.html' >BETA</a></li><li><a href='http://www.motorcycle.com/specs/big-bear-choppers.html' >Big Bear Choppers</a></li><li><a href='http://www.motorcycle.com/specs/big-dog.html' >Big Dog</a></li><li><a href='http://www.motorcycle.com/specs/bmw.html' >BMW</a></li><li><a href='http://www.motorcycle.com/specs/brammo.html' >Brammo</a></li><li><a href='http://www.motorcycle.com/specs/buell.html' >Buell</a></li><li><a href='http://www.motorcycle.com/specs/california-scooter-co-.html' >California Scooter Co.</a></li><li><a href='http://www.motorcycle.com/specs/can-am.html' >Can-Am</a></li><li><a href='http://www.motorcycle.com/specs/cfmoto.html' >CFMOTO</a></li><li><a href='http://www.motorcycle.com/specs/csc-motorcycles.html' >CSC Motorcycles</a></li><li><a href='http://www.motorcycle.com/specs/ducati.html' >Ducati</a></li><li><a href='http://www.motorcycle.com/specs/e-ton.html' >E-ton</a></li><li><a href='http://www.motorcycle.com/specs/erik-buell-racing.html' >Erik Buell Racing</a></li><li><a href='http://www.motorcycle.com/specs/fischer.html' >Fischer</a></li><li><a href='http://www.motorcycle.com/specs/flyscooters.html' >Flyscooters</a></li><li><a href='http://www.motorcycle.com/specs/gas-gas.html' >GAS GAS</a></li><li><a href='http://www.motorcycle.com/specs/genuine-scooter-co-.html' >Genuine Scooter Co.</a></li><li><a href='http://www.motorcycle.com/specs/harley-davidson.html' >Harley-Davidson</a></li><li><a href='http://www.motorcycle.com/specs/honda.html' >Honda</a></li><li><a href='http://www.motorcycle.com/specs/husaberg.html' >Husaberg</a></li><li><a href='http://www.motorcycle.com/specs/husqvarna.html' >Husqvarna</a></li><li><a href='http://www.motorcycle.com/specs/hyosung.html' >Hyosung</a></li><li><a href='http://www.motorcycle.com/specs/indian.html' >Indian</a></li><li><a href='http://www.motorcycle.com/specs/kawasaki.html' >Kawasaki</a></li><li><a href='http://www.motorcycle.com/specs/ktm.html' >KTM</a></li><li><a href='http://www.motorcycle.com/specs/kymco.html' >Kymco</a></li><li><a href='http://www.motorcycle.com/specs/lambretta.html' >Lambretta</a></li><li><a href='http://www.motorcycle.com/specs/lance.html' >Lance</a></li><li><a href='http://www.motorcycle.com/specs/moto-guzzi.html' >Moto Guzzi</a></li><li><a href='http://www.motorcycle.com/specs/motus.html' >Motus</a></li><li><a href='http://www.motorcycle.com/specs/mv-agusta.html' >MV Agusta</a></li><li><a href='http://www.motorcycle.com/specs/mz.html' >MZ</a></li><li><a href='http://www.motorcycle.com/specs/norton.html' >Norton</a></li><li><a href='http://www.motorcycle.com/specs/peirspeed.html' >Peirspeed</a></li><li><a href='http://www.motorcycle.com/specs/piaggio.html' >Piaggio</a></li><li><a href='http://www.motorcycle.com/specs/polaris.html' >Polaris</a></li><li><a href='http://www.motorcycle.com/specs/qlink.html' >QLINK</a></li><li><a href='http://www.motorcycle.com/specs/royal-enfield.html' >Royal Enfield</a></li><li><a href='http://www.motorcycle.com/specs/saxon-motorcycle.html' >Saxon Motorcycle</a></li><li><a href='http://www.motorcycle.com/specs/schwinn.html' >Schwinn</a></li><li><a href='http://www.motorcycle.com/specs/suzuki.html' >Suzuki</a></li><li><a href='http://www.motorcycle.com/specs/sym.html' >SYM</a></li><li><a href='http://www.motorcycle.com/specs/tomberlin.html' >Tomberlin</a></li><li><a href='http://www.motorcycle.com/specs/tomos.html' >Tomos</a></li><li><a href='http://www.motorcycle.com/specs/triumph.html' >Triumph</a></li><li><a href='http://www.motorcycle.com/specs/united-motors.html' >United Motors</a></li><li><a href='http://www.motorcycle.com/specs/ural.html' >Ural</a></li><li><a href='http://www.motorcycle.com/specs/vectrix.html' >Vectrix</a></li><li><a href='http://www.motorcycle.com/specs/vento.html' >Vento</a></li><li><a href='http://www.motorcycle.com/specs/vespa.html' >Vespa</a></li><li><a href='http://www.motorcycle.com/specs/victory.html' >Victory</a></li><li><a href='http://www.motorcycle.com/specs/yamaha.html' >Yamaha</a></li><li><a href='http://www.motorcycle.com/specs/zero.html' >Zero</a></li>
+			</ul>
+		</span>
+
+	</div><!-- end column -->
+
+
+	<div class="categories classifieds classifications bottom_lists" >
+
+		<span class="section classifieds_section">
+			<div class="border_wrapper">
+				<h3>Find a Used  Motorcycle</h3>
+				<div class="text">
+
+					<form id="searchform" action="http://www.motorcycle.com/classifieds/search.php" method="post">
+
+					<div id="classifieds_search_box"></div>
+
+					<a href="javascript:void(0);" onclick="document.getElementById('searchform').submit(); return false;" class="submit"><img src="sites/mot/images/button-find-used.gif" alt="Search" border="0" /></a>
+					</form>
+
+				</div>
+			</div>
+		</span><!-- end section -->
+
+		<script>
+		$(document).ready(function() {
+				$('#classifieds_search_box').load(
+					'http://www.motorcycle.com/classifieds/get_search_box.php?c='+escape('')+'&m='+escape(''),
+					function(){
+						$("#classifieds_search_box input, #classifieds_search_box textarea, #classifieds_search_box select, #classifieds_search_box button").uniform();
+						//$.uniform.update();
+					});
+		});
+		</script>
+
+
+		<span class="section section_find_dealer">
+			<div class="border_wrapper">
+				<h3>Find a Motorcycle Dealer</h3>
+				<div class="text">
+					Interested in buying a new motorcycle?
+					Find a <a href="http://www.motorcycle.com/dealers/motorcycle-dealers.html"> Motorcycle Dealer</a> now!
+
+					<form method="post" action="http://www.motorcycle.com/dealers" id="finder_dealer_form"
+					onsubmit="if( !document.getElementById('finder_zip').value || document.getElementById('finder_zip').value.match(/^\d{5}$/)){
+					  	return true;
+					  }else{
+					  	alert('Please enter correct zipcode');
+					  	return false;
+					  }" >
+					<input id="finder_zip" name="zip" type="text" value="Enter your Zipcode"
+					onclick="if(this.value=='Enter your Zipcode')this.value='';"
+					>
+					<img class="submit" src="sites/mot/images/button-sm-find-dealer.gif" alt="Find a Dealer" border="0"
+					 onclick="postMe();" 	>
+					</form>
+
+				</div>
+			</div>
+		</span><!-- end section -->
+
+	</div><!-- end categoires - bottom_lists -->
+
+<script language="javascript">
+$(document).ready(function() {
+  $('#finder_zip').keydown(function(event){
+    if( (event.keyCode == 13) && (postMe() == false) ) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+
+function postMe(){
+
+	var tmpStr = "";
+	var form_url='';
+
+	if( $('#finder_zip').val() ) {
+		form_url = form_url + '/' + $('#finder_zip').val();
+	}
+
+	form_url = '/dealers' + form_url;
+
+	if( !$('#finder_zip').val() || $('#finder_zip').val().match(/^\d{5}$/)){
+		$("#finder_dealer_form").attr('action', form_url);
+		$('#finder_dealer_form').submit();
+	}else{
+		alert('Please enter correct zipcode');
+	  	return false;
+	}
+}
+</script>
+
+
+
+</div><!-- end body_content -->
+
+
+</div>
+
+
+
+<script type="text/javascript" language="JavaScript" >
+
+		function get_NextDropdown(level){
+
+			// $("#indexTrimImage")[0].src='/specs/sites/mot/images/default.jpg';
+
+			if(level==1){
+				$("input#MakeId").val($("select#MakeId").val());
+				if($("select#MakeId").val()==''){
+					$("select#ModelType").html("<option value=''>&nbsp;</option>");
+					$("select#ModelYear").html("<option value=''>&nbsp;</option>");
+					$("select#TrimId").html("<option value=''>&nbsp;</option>");
+					return;
+				}
+			}else if(level==2){
+				$("input#ModelType").val($("select#ModelType").val());
+				if($("select#ModelType").val()==''){
+					$("select#ModelYear").html("<option value=''>&nbsp;</option>");
+					$("select#TrimId").html("<option value=''>&nbsp;</option>");
+					return;
+				}
+			}else if(level==3){
+				$("input#ModelYear").val($("select#ModelYear").val());
+				if($("select#ModelYear").val()==''){
+					$("select#TrimId").html("<option value=''>&nbsp;</option>");
+					return;
+				}
+			}
+
+			$.get("/specs/ajax.php",
+			   		{
+						ajax_action:"find_a_bike",
+						level:level,
+						MakeId:$("select#MakeId").val(),
+						ModelType:$("select#ModelType").val(),
+						ModelYear:$("select#ModelYear").val(),
+						ad:1     //for ad
+					},
+			   		function(j){
+					      var options = "";
+						  j=j.split(/,/);
+						  var level=j[0];
+						  var options=j[1];
+						  if(level==1){
+							  $("select#ModelType").html(options);
+							  if (!jQuery.browser.msie)$("select#ModelType option:first").attr("selected","selected");
+							  $("select#ModelYear").html("<option value=''>&nbsp;</option>");
+							  $("select#TrimId").html("<option value=''>&nbsp;</option>");
+						  }else if(level==2){
+							  $("select#ModelYear").html(options);
+							  $("option:first", "select#ModelYear").attr("selected","selected");
+							  $("select#TrimId").html("<option value=''>&nbsp;</option>");
+						  }else if(level==3){
+							  $("select#TrimId").html(options);
+							  $("option:first", "select#TrimId").attr("selected","selected");
+						  }
+						  $.uniform.update();  // only for motorcycle
+						  return;
+					}
+			 	);
+		}
+
+		function get_TrimImage(){
+
+			$("input#TrimId").val($("select#TrimId").val());
+
+			$.get("/specs/ajax.php",
+			   		{
+						ajax_action:"get_trim_image",
+						TrimId:$("select#TrimId").val()
+					},
+			   		function(j){
+			   			$("#indexTrimImage")[0].src=j;
+					}
+			 	);
+
+		}
+
+</script>
+
+		</div>
+	</div>
+	<!-- end main-content_wrapper -->
+<aside id="sidebar" class="noprint nolinks">
+<div class="ad" id="MCL_com_300x90_Spotlight_PS">		<script type="text/javascript">
+		googletag.cmd.push(function (){
+			googletag.display("MCL_com_300x90_Spotlight_PS")
+			});
+		</script>
+                </div><div class="ad" id="MCL_com_300x150_Insurance_PS">		<script type="text/javascript">
+		googletag.cmd.push(function (){
+			googletag.display("MCL_com_300x150_Insurance_PS")
+			});
+		</script>
+                </div><div class="ad" id="MCL_com_300x250_Sidebar1_PS">		<script type="text/javascript">
+		googletag.cmd.push(function (){
+			googletag.display("MCL_com_300x250_Sidebar1_PS")
+			});
+		</script>
+                </div>				<section id="featured-brands" class="section">
+					<h1 class="title">Featured Motorcycle Brands</h1>
+					<div class="featured-brands">
+					<ul>
+                		<li class="Aprilia"><a href="http://www.motorcycle.com/manufacturer/aprilia.html">Aprilia</a></li>
+<li class="BMW"><a href="http://www.motorcycle.com/manufacturer/bmw.html">BMW</a></li>
+<li class="Ducati"><a href="http://www.motorcycle.com/manufacturer/ducati.html">Ducati</a></li>
+<li class="Harley-Davidson"><a href="http://www.motorcycle.com/manufacturer/harley-davidson.html">Harley-Davidson</a></li>
+<li class="Honda"><a href="http://www.motorcycle.com/manufacturer/honda.html">Honda</a></li>
+<li class="Kawasaki"><a href="http://www.motorcycle.com/manufacturer/kawasaki.html">Kawasaki</a></li>
+<li class="KTM"><a href="http://www.motorcycle.com/manufacturer/ktm.html">KTM</a></li>
+<li class="Suzuki"><a href="http://www.motorcycle.com/manufacturer/suzuki.html">Suzuki</a></li>
+<li class="Triumph"><a href="http://www.motorcycle.com/manufacturer/triumph.html">Triumph</a></li>
+<li class="Vespa"><a href="http://www.motorcycle.com/manufacturer/vespa.html">Vespa</a></li>
+<li class="Victory"><a href="http://www.motorcycle.com/manufacturer/victory.html">Victory</a></li>
+<li class="Yamaha"><a href="http://www.motorcycle.com/manufacturer/yamaha.html">Yamaha</a></li>
+					</ul>
+					</div>
+				</section><section id="text-5" class="widget-container widget_text">			<div class="textwidget"><section class="section" id="social">
+
+<div class="g-plus" data-href="https://plus.google.com/101848431124337308074" data-rel="publisher"></div>
+
+<div id="facebook">
+<div class="fb-like-box" data-href="http://facebook.com/Motorcyclecom" data-width="300" data-height="185" data-show-faces="true" data-show-border="false" data-stream="false" data-header="false"></div>
+</div>
+<!-- end facebook -->
+
+<div id="twitter">
+<a href="https://twitter.com/motorcyclecom" class="twitter-follow-button" data-show-count="true" data-size="large" data-width="300">Follow @Motorcycle</a>
+</div>
+<!-- end twitter -->
+
+</section></div>
+		</section><section class="section article media" id="video">
+    <h1 class="title">
+    <a href="#" class="sponsor"></a>
+    <a href="/videos.html">Top Videos</a></h1>
+    <h3 class="video-link">2018 BMW HP4 Race Video Review</h3>
+    <div class="picture">
+        <div class="video-link">
+            <span class="video-icon"><!-- -->&nbsp;</span>
+ <img data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/11/111317-video-bmw-hp4-race-f-224x137.jpg" src="http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/images/spacer.gif" class="photo" border="0" alt="2018 BMW HP4 Race Video Review" width="300" height="184" style="display: inline; ">
+	</div>
+    </div>
+    <div class="controls video-link"><!-- -->&nbsp;</div>
+
+    <ul class="lastest-videos">
+    <li><a href="http://www.motorcycle.com/manufacturer/kawasaki/first-look-2018-kawasaki-z900rs-cafe.html">First Look: 2018 Kawasaki Z900RS Cafe</a></li>
+    <li><a href="http://www.motorcycle.com/manufacturer/honda/2018-honda-crf250r-first-ride-review.html">2018 Honda CRF250R First Ride Review</a></li>
+    <li><a href="http://www.motorcycle.com/manufacturer/aprilia/2018-aprilia-dorsoduro-shiver-900-video-recap.html">2018 Aprilia Dorsoduro &#038; Shiver 900 Video Recap</a></li>
+    <li><a href="http://www.motorcycle.com/shoot-outs/800cc-euro-triples-streetfighter-faceoff">800cc Euro Triples Streetfighter Faceoff</a></li>
+    </ul>
+
+    <div id="video-popup" class="vs-lightbox" style="display:none;">
+        <input type="hidden" value="c4j6sAsSexA" id="topVideoYoutubeID" name="topVideoYoutubeID">
+        <div class="text_wrapper">
+            <article class="video-popup-content vs-lightbox-content">
+                <h3>
+                    <span class="video-link close-link">CLOSE <strong class="close">X</strong></span>
+                    <a href="http://www.motorcycle.com/manufacturer/bmw/2018-bmw-hp4-race-video-review.html">2018 BMW HP4 Race Video Review</a>
+                </h3>
+
+                <div class="picture">
+                    <div id="galleryPlayer_lightbox_wrapper">
+			<script type="text/javascript">callPlayer(xml_url,"c4j6sAsSexA","galleryPlayer_lightbox_wrapper","640","390","0");</script>
+		    </div>
+<br />
+                </div>
+                <div class="text">
+                    <div class="byline">
+                        <span class="date"><meta content="November 13, 2017">November 13, 2017</span>
+                    </div>
+                    <!-- end byline -->
+                    <span class="description">BMW’s S1000RR knocked our socks off when it</span>
+                    <a href="http://www.motorcycle.com/manufacturer/bmw/2018-bmw-hp4-race-video-review.html">READ FULL STORY</a>
+                </div>
+<div class="ad" id="MCL_com_300x250_Top-Video_PS">
+<script type="text/javascript">
+	googletag.cmd.push(function (){
+		googletag.display("MCL_com_300x250_Top-Video_PS");
+	});
+</script>
+</div>
+
+            </article>
+        </div>
+    </div>
+    <!-- end toggle popup -->
+
+</section>
+<section class="youtube-subscribe">
+<a href="http://www.youtube.com/motorcycle?sub_confirmation=1">Subscribe on YouTube</a>
+</section>
+<section class="text_wrapper section articles most-popular nolinks"><h2 class="title">Most Popular</h2>	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="main-column-picture">
+        	<a rel="external" href="http://www.motorcycle.com/features/somebodys-probably-going-to-lose-their-job-over-this-video.html">
+				<img class="photo" data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/06/Marquez-fall-120x74.jpg" src="http://www.motorcycle.com/images/spacer.gif" border="0" alt="Somebody&#8217;s Probably Going to Lose Their Job Over This + Video" width="150" height="90" >
+        	</a>
+		</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/features/somebodys-probably-going-to-lose-their-job-over-this-video.html">Somebody&#8217;s Probably Going to Lose Their Job Over This + Video</a></h3>
+			</div>
+		</div>
+	</article>	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="main-column-picture">
+        	<a rel="external" href="http://www.motorcycle.com/shoot-outs/2017-superbike-track-shootout">
+				<img class="photo" data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/06/062327-2017-shootout-Superbike-Track-Group-f-120x74.jpg" src="http://www.motorcycle.com/images/spacer.gif" border="0" alt="2017 Superbike Track Shootout" width="150" height="90" >
+        	</a>
+		</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/shoot-outs/2017-superbike-track-shootout">2017 Superbike Track Shootout</a></h3>
+			</div>
+		</div>
+	</article>	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="main-column-picture">
+        	<a rel="external" href="http://www.motorcycle.com/top10/ten-bikes-for-short-people.html">
+				<img class="photo" data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2013/07/Top-10-Bikes-For-Short-People-Feature-120x73.jpg" src="http://www.motorcycle.com/images/spacer.gif" border="0" alt="Ten Bikes For Short People" width="150" height="90" >
+        	</a>
+		</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/top10/ten-bikes-for-short-people.html">Ten Bikes For Short People</a></h3>
+			</div>
+		</div>
+	</article>	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="main-column-picture">
+        	<a rel="external" href="http://www.motorcycle.com/features/10-best-beginner-motorcycles.html">
+				<img class="photo" data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/06/061517-10-Best-Beginner-Lead-edit-120x74.jpg" src="http://www.motorcycle.com/images/spacer.gif" border="0" alt="10 Best Beginner Motorcycles" width="150" height="90" >
+        	</a>
+		</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/features/10-best-beginner-motorcycles.html">10 Best Beginner Motorcycles</a></h3>
+			</div>
+		</div>
+	</article>	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="main-column-picture">
+        	<a rel="external" href="http://www.motorcycle.com/manufacturer/harley-davidson/harley-davidson-introduces-all-new-2018-softail-line.html">
+				<img class="photo" data-original="http://motorcycle.com.vsassets.com/blog/wp-content/uploads/2017/08/082217-2018-Harley-Softail-Line-f-120x74.jpg" src="http://www.motorcycle.com/images/spacer.gif" border="0" alt="Harley-Davidson Introduces All New 2018 Softail Line" width="150" height="90" >
+        	</a>
+		</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/manufacturer/harley-davidson/harley-davidson-introduces-all-new-2018-softail-line.html">Harley-Davidson Introduces All New 2018 Softail Line</a></h3>
+			</div>
+		</div>
+	</article></section><div class="ad" id="MCL_com_300x250_Sidebar2_PS">		<script type="text/javascript">
+		googletag.cmd.push(function (){
+			googletag.display("MCL_com_300x250_Sidebar2_PS")
+			});
+		</script>
+                </div><!-- from cache --><section class="text_wrapper section articles most-commented">
+	<h2 class="title">Trending on MO</h2>
+		<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="comments">80</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/manufacturer/yamaha/2018-yamaha-xsr700-sport-heritage-first-ride-review.html">2018 Yamaha XSR700 Sport Heritage First Ride Review</a></h3>
+			</div>
+		</div>
+	</article>
+	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="comments">73</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/features/would-you-ride-it.html">Would You Ride It?</a></h3>
+			</div>
+		</div>
+	</article>
+	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="comments">47</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://blog.motorcycle.com/2017/11/15/news/71788/">MV Agusta Mentions 2018 Models And Restructuring Plans</a></h3>
+			</div>
+		</div>
+	</article>
+	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="comments">30</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/features/how-not-to-learn-to-ride-a-motorcycle-exhibit-a.html">How Not to Learn to Ride a Motorcycle, Exhibit A</a></h3>
+			</div>
+		</div>
+	</article>
+	<article class="text_wrapper thumbnails-small" itemtype="http://schema.org/Article" itemscope="">
+		<div class="comments">21</div>
+		<div class="main-column-text-wrapper">
+			<div class="main-column-text">
+				<h3 itemprop="headline"><a href="http://www.motorcycle.com/ask-mo-anything/how-much-better-are-tires-compared-to-30-years-ago.html">How Much Better Are Tires Compared to 30 Years Ago?</a></h3>
+			</div>
+		</div>
+	</article>
+</section>
+</aside>
+</div><!-- #main -->
+
+<footer id="footer" class="vsadspot footer nolinks">
+
+<nav class="text_wrapper nav" id="footer-nav"></nav>
+
+<div class="logo_wrapper">
+<a href="http://www.motorcycle.com" class="logo"><img data-original="http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/images/logo-footer.png" src="http://www.motorcycle.com/blog/wp-content/themes/mo_blackbird/images/logo-footer.png" class="photo" alt="Motorcycle.com" width="284" height="44" style="display: inline;"></a>
+
+<span class="social">
+<ul class="list">
+    <li><a id="facebook-linki-footer" href="http://www.facebook.com/Motorcyclecom" target="_blank"><span class="sprite">Facebook</span></a></li>
+    <li><a id="twitter-link-footer" href="http://twitter.com/MotorcycleCom" target="_blank"><span class="sprite">Twitter</span></a></li>
+    <li><a id="youtube-link-footer" href="http://www.youtube.com/motorcycle" target="_blank"><span class="sprite">Youtube</span></a></li>
+    <li><a id="google-plus-link-footer" href="https://plus.google.com/101848431124337308074/posts" target="_blank"><span class="sprite">Google Plus</span></a></li>
+    <li class="rss-link"><a id="rss-link-footer" href="http://feeds.feedburner.com/Motorcyclefeed" target="_blank"><span class="sprite">RSS</span></a></li>
+<li>
+        <div id="newsletter-link-footer" class="newsletter-link-footer"><span class="sprite"><!-- -->&nbsp;</span> Newsletter</div>
+        <div id="newsletter-popup-footer" style="display: none;">
+            Join the Motorcycle.com Weekly Newsletter to keep up to date on all things motorcycling.
+            <br>
+            <br>
+		<section id="newsletter" class="section noprint nolinks">
+<form method="post" action="http://email.motorcycle.com/newsletter-signup/" class="form">
+        <input type="hidden" name="form[subscribeCheck]" value="1" />
+        <input type="hidden" name="form[source]" value="wp_generic" />
+		<input type="text"  name="form[email]" placeholder="Enter Your Email" class="text" required >
+	<input type="submit" name="joon_newsletters" value="subscribe" style="opacity: 0;">
+	<div class="newsletter-link-footer close">X</div>
+</form>
+</section>
+
+        </div>
+    </li>
+
+</ul>
+</span>
+
+</div>
+
+
+<nav class="text_wrapper subnav" id="footer-subnav">
+<ul>
+<li><a href="http://www.motorcycle.com/about-us.html">About Us</a></li>
+<li><a href="http://www.motorcycle.com/privacy-statement.html">Privacy Statement</a></li>
+<li><a href="http://www.motorcycle.com/terms-of-service.html">Terms of Service</a></li>
+<li><a href="http://www.motorcycle.com/advertising-info.html">Advertising Info</a></li>
+<li><a class="rss" href="http://feeds.feedburner.com/Motorcyclefeed">RSS</a></li>
+<li><a href="http://www.motorcycle.com/forum/sendmessage.php">Contact Us</a></li>
+</ul>
+</nav>
+
+<span class="copywrite">&copy; 2017  VerticalScope Inc. All rights reserved.</span>
+<span id="getip" style="display:none;">39.71.226.41</span>
+</footer>
+</div>
+
+
+<!-- UK legal cookies -->
+<style>
+.uk-cookie-popup {display:none;border: 2px solid #333; background: #f4f4f4; color: #333; Font-size: 11px; padding: 0px 10px 10px; line-height: normal; position: fixed; z-index: 1000001; bottom: 0px; left: 0px; width: 300px; max-width: 100%; margin: 2px; text-align: left; font-family: Arial;}
+.uk-cookie-popup-title {margin: 0px -10px 10px; background: #333; color: #fff; padding: 5px 10px; font-weight: bold;}
+.uk-cookie-popup a {color: #0983b6;}
+.uk-cookie-popup a.uk-cookie-popup-close {float: right; color: #fff; font-size: 14px; display: inline-block; border: 1px solid #ccc; padding: 1px; line-height: 12px }
+</style>
+<div id="ukCookiePopup" class="uk-cookie-popup">
+<div class="uk-cookie-popup-title"><a href="" class="uk-cookie-popup-close" onclick="EEACookie.setUkLegalCookie();return false;">x</a> Cookie and Data Use Consent</div>
+We use cookies to improve your experience on this website and so that ads you see online can be tailored to your online browsing interests.
+We use data about you for a number of purposes explained in the links below.  By continuing to browse our site you agree to our use of data and cookies.
+<br/><a href="http://www.verticalscope.com/about-us/Data-Use-Consent-Notice.html?site=motorcycle.com">Tell me more</a> |
+<a href="http://www.verticalscope.com/about-us/cookie-preferences.html?site=motorcycle.com">Cookie Preferences</a>
+</div>
+<script>
+
+var EEACookie = {
+
+	createCookie : function (name,value,days) {
+	    if (days) {
+	        var date = new Date();
+	        date.setTime(date.getTime()+(days*24*60*60*1000));
+	        var expires = "; expires="+date.toGMTString();
+	    }
+	    else var expires = "";
+	    document.cookie = name+"="+value+expires+"; path=/";
+	},
+
+	readCookie : function (name) {
+	    var nameEQ = name + "=";
+	    var ca = document.cookie.split(";");
+	    for(var i=0;i < ca.length;i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==" ") c = c.substring(1,c.length);
+	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	    }
+	    return null;
+	},
+
+	eraseCookie : function (name) {
+	    this.createCookie(name,"",-1);
+	},
+
+	init : function (){
+		//Check if cookie has been set
+		if (this.readCookie("uk-cookie-legal") == null && this.readCookie("not-in-europe")!="true" ) {
+
+			//do ajax call to check geo location
+			$.ajax({
+				context: this,
+				type: "get",
+				url: "http://www.motorcycle.com/blog/wp-admin/admin-ajax.php",
+				data: {
+					"action" : "vs_check_euro_ip",
+					"rnd" : Math.random(),
+				},
+				success: function(data){
+					if ( data === 'true' ) {
+					    //show popup
+					    document.getElementById("ukCookiePopup").style.display = "block";
+					}else if ( data === 'false' ) {
+						this.createCookie("not-in-europe","true",30);
+					}
+				}
+			});
+
+		}
+
+	},
+
+	setUkLegalCookie : function (){
+	    this.createCookie("uk-cookie-legal","been-shown",3650); //set cookie for 10 years
+	    document.getElementById("ukCookiePopup").style.display = "none";
+	}
+}
+EEACookie.init();
+
+</script>
+<!-- END UK legal cookies -->
+
+<script src="/blog/wp-content/themes/mo_blackbird/scripts/scripts-bottom.js?v=20170116190729"></script>
+<script type="text/javascript" src="/blog/wp-content/themes/mo_blackbird/scripts/scripts-defer.js?v=20170116190729"></script>
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+
+
+
+<div class="ad" id="MCL_com_320x50_Mobile_Bottom_PS">
+<script>
+	googletag.cmd.push(function (){
+		googletag.display("MCL_com_320x50_Mobile_Bottom_PS");
+		});
+</script>
+</div>
+
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'motorcycleblog';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1 && nodes[i].parentNode.tagName == 'A') {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type='text/javascript' src='http://www.motorcycle.com/blog/wp-includes/js/wp-embed.min.js?ver=4.8.1'></script>
+<script type='text/javascript' src='http://ad.crwdcntrl.net/5/c=8059/pe=y/var=ccauds?ver=4.8.1'></script>
+
+<!-- ConsolidatedFooters Footers -->
+<!-- Lotame -->
+<script src="http://tags.crwdcntrl.net/c/8060/cc_af.js"></script>
+<!-- /Lotame -->
+<script language="javascript" type="text/javascript">
+<!--
+var _dropTag=function() {
+var _qS="";
+var _rand=Math.random()+"";
+var _rs=document.location.protocol+"//";
+var xp1_qs =
+{
+"_t": "motovsmotoct",
+"_random": _rand*100000000000
+}
+for(var qsKey in xp1_qs){_qS += "&"+qsKey+"="+xp1_qs[qsKey];}
+document.write("<iframe src=\""+_rs+"m.xp1.ru4.com/meta?_o=15719"+_qS+"\" width=\"0\" height=\"0\" frameborder=\"0\" scrolling=\"no\"><\/iframe>");}
+_dropTag();
+//-->
+</script>
+<!-- /ConsolidatedFooters Footers -->
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"0f2b0d60a0","applicationID":"3495044","transactionName":"YFMEZUdYCBADVRddVlkZM0NcFhMQEBkQXU1SRUlcWk0JEQFPAFhcGVUJXBpOERRNRRNRWkQZD19RXB5NEl4T","queueTime":0,"applicationTime":752,"atts":"TBQHEw9CGx4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Page Caching using disk: enhanced (Requested URI is rejected)
+Page cache debug info:
+Engine:             disk: enhanced
+Cache key:
+Reject reason:      Requested URI is rejected
+Creation Time:      1511331458.000s
+Header info:
+Set-Cookie:          PHPSESSID=a50ab2f855694e687d890ca686cf312c; path=/
+Expires:             Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control:       no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma:              no-cache
+Content Delivery Network via motorcycle.com.vsassets.com
+
+ Served from: www.motorcycle.com @ 2017-11-22 01:17:38 by W3 Total Cache -->

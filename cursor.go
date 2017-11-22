@@ -1,4 +1,4 @@
-package myhtmlparser
+package notbearparser
 
 import (
 	"errors"
@@ -11,7 +11,6 @@ var EmptyTagListErr = errors.New("There is no tag in cursor's tag list")
 var NotValidQueryErr = errors.New("The query string is not valid")
 
 type Cursor struct {
-	// RawHTML         string
 	Root            *Node
 	CurrentNode     *Node
 	CurrentDepth    int
@@ -21,48 +20,7 @@ type Cursor struct {
 
 func NewCursor(html string) *Cursor {
 	return &Cursor{
-		// RawHTML:    html,
 		TagHandler: NewTagHandler(html),
-	}
-}
-
-func (c *Cursor) GenerateRoot() error {
-	switch len(c.TagHandler.TagList) {
-	case 0:
-		return EmptyTagListErr
-	case 1:
-		if c.TagHandler.TagList[0].Type != VOID_TAG {
-			return NotValidHTMLErr
-		}
-		c.Root = GenerateNode(c.TagHandler.TagList[0], c.TagHandler.TagList[0], c.TagHandler.HTML)
-		c.TagHandler.TagList = make([]*Tag, 0)
-		return nil
-	default:
-		nRoot := 0
-		for _, tag := range c.TagHandler.TagList {
-			if tag.Depth == 1 {
-				if tag.Type == VOID_TAG {
-					nRoot += 2
-				} else {
-					nRoot += 1
-				}
-			}
-		}
-		if nRoot%2 != 0 {
-			return NotValidHTMLErr
-		}
-		if nRoot > 2 {
-			c.Root = &Node{Name: "VirtualNode"}
-			return nil
-		} else {
-			if !IsPairs(c.TagHandler.TagList[0], c.TagHandler.TagList[len(c.TagHandler.TagList)-1]) {
-				return NotValidHTMLErr
-			}
-			root := GenerateNode(c.TagHandler.TagList[0], c.TagHandler.TagList[len(c.TagHandler.TagList)-1], c.TagHandler.HTML)
-			c.Root = root
-			c.TagHandler.TagList = c.TagHandler.TagList[1 : len(c.TagHandler.TagList)-1]
-			return nil
-		}
 	}
 }
 
@@ -71,32 +29,9 @@ func (c *Cursor) Parse() error {
 	if err != nil {
 		return err
 	}
-	err = c.GenerateRoot()
-	if err != nil {
-		return err
-	}
-	GenerateNodeTree(c.Root, c.TagHandler.TagList, c.TagHandler.HTML)
+	c.Root = &Node{Name: "root", Attrs: NewAttrMap()}
+	c.TagHandler.parseTagList(c.Root)
 	return nil
-}
-
-func GenerateNodeTree(currentNode *Node, tagList []*Tag, html string) {
-	if len(tagList) == 0 {
-		return
-	}
-	tag := tagList[0]
-	for index, nextTag := range tagList {
-		if IsPairs(tag, nextTag) {
-			node := GenerateNode(tag, nextTag, html)
-			node.Parent = currentNode
-			currentNode.Children = append(currentNode.Children, node)
-			GenerateNodeTree(node, tagList[1:index], html)
-			if index != len(tagList)-1 {
-				newTagList := tagList[index+1:]
-				GenerateNodeTree(currentNode, newTagList, html)
-			}
-			break
-		}
-	}
 }
 
 func PrintTree(root *Node) {

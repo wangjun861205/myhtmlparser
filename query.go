@@ -1,4 +1,4 @@
-package myhtmlparser
+package notbearparser
 
 type QUERY_TARGET int
 

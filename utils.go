@@ -1,10 +1,16 @@
-package myhtmlparser
+package notbearparser
+
+import "fmt"
 
 type AttrList []string
 
 func NewAttrList() *AttrList {
 	attrList := AttrList(make([]string, 0, 16))
 	return &attrList
+}
+
+func (attrList *AttrList) String() string {
+	return fmt.Sprintf("%s", *attrList)
 }
 
 func (attrList *AttrList) Pop() (string, bool) {
@@ -135,4 +141,28 @@ func (attrMap *AttrMap) Contains(otherMap *AttrMap) bool {
 		}
 	}
 	return true
+}
+
+type TagList []*Tag
+
+func (tl *TagList) LeftPop() (*Tag, bool) {
+	switch len(*tl) {
+	case 0:
+		return nil, false
+	case 1:
+		tag := (*tl)[0]
+		*tl = TagList{}
+		return tag, true
+	default:
+		tag := (*tl)[0]
+		*tl = (*tl)[1:]
+		return tag, true
+	}
+}
+
+type NBString string
+
+func (nbs NBString) EndsWith(endString string) bool {
+	endLen := len(endString)
+	return nbs[len(nbs)-endLen:] == NBString(endString)
 }

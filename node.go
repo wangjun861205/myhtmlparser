@@ -1,16 +1,18 @@
-package myhtmlparser
+package notbearparser
 
 import "fmt"
 
 type Node struct {
-	Name        string
-	Attrs       *AttrMap
-	Content     string
-	Parent      *Node
-	Children    []*Node
-	PrevSibling *Node
-	NextSibling *Node
-	Siblings    []*Node
+	Name          string
+	Attrs         *AttrMap
+	Content       string
+	Parent        *Node
+	Children      []*Node
+	PrevSibling   *Node
+	NextSibling   *Node
+	Siblings      []*Node
+	StartPosition int
+	EndPosition   int
 }
 
 func (node *Node) String() string {
@@ -36,5 +38,15 @@ func GenerateNode(startTag, endTag *Tag, html string) *Node {
 			Siblings: make([]*Node, 0, 8),
 		}
 		return node
+	}
+}
+
+func FromStartTag(tag *Tag) *Node {
+	return &Node{
+		Name:          tag.Name,
+		Attrs:         tag.Attrs,
+		StartPosition: tag.Position[1],
+		Children:      make([]*Node, 0, 8),
+		Siblings:      make([]*Node, 0, 8),
 	}
 }

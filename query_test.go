@@ -1,4 +1,4 @@
-package myhtmlparser
+package notbearparser
 
 // func TestQuery(t *testing.T) {
 // 	queryStr := `div[data-pk="test_pk", hidden] p>.red`
