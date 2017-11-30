@@ -143,6 +143,14 @@ func (attrMap *AttrMap) Contains(otherMap *AttrMap) bool {
 	return true
 }
 
+func (attrMap *AttrMap) Get(key string) (AttrList, bool) {
+	if attrList, ok := (*attrMap)[key]; ok {
+		return *attrList, true
+	} else {
+		return AttrList{}, false
+	}
+}
+
 type TagList []*Tag
 
 func (tl *TagList) LeftPop() (*Tag, bool) {

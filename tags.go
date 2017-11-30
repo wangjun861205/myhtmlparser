@@ -3,7 +3,6 @@ package notbearparser
 import (
 	"errors"
 	"fmt"
-	"os"
 	"regexp"
 	"strings"
 )
@@ -39,6 +38,15 @@ var VoidEleMap = map[string]bool{
 
 var AutoCompleteReMap = map[string]*regexp.Regexp{
 	"option": optionAutoCompleteRe,
+}
+
+var EscapeCharMap = map[string]string{
+	"&nbsp;": " ",
+	"&amp;":  "&",
+	"&lt;":   "<",
+	"&gt;":   ">",
+	"&quot;": `""`,
+	"&#39;":  "'",
 }
 
 var TypeMap = map[string]func(string) TAG_TYPE{
@@ -125,14 +133,23 @@ func (tg *TagHandler) AddValueQuote() {
 	tg.HTML = newHTML
 }
 
+func (tg *TagHandler) Escape() {
+	newHTML := tg.HTML
+	for k, v := range EscapeCharMap {
+		newHTML = strings.Replace(newHTML, k, v, -1)
+	}
+	tg.HTML = newHTML
+}
+
 func (tg *TagHandler) Feed() error {
 	tg.ClearScript()
 	tg.ClearStyle()
 	tg.ClearComment()
 	tg.AutoComplete()
 	tg.AddValueQuote()
-	f, _ := os.OpenFile("processed_html.html", os.O_CREATE|os.O_WRONLY, 0664)
-	f.WriteString(tg.HTML)
+	tg.Escape()
+	// f, _ := os.OpenFile("processed_html.html", os.O_CREATE|os.O_WRONLY, 0664)
+	// f.WriteString(tg.HTML)
 	allTagsStr := tagRe.FindAllStringSubmatch(tg.HTML, -1)
 	allTagsIndex := tagRe.FindAllStringIndex(tg.HTML, -1)
 	for i, tagStr := range allTagsStr {

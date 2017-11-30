@@ -2,6 +2,18 @@ package notbearparser
 
 import "fmt"
 
+type NodeList []*Node
+
+func (nl NodeList) Filter(f func(*Node) bool) NodeList {
+	filteredList := make(NodeList, 0, 16)
+	for _, node := range nl {
+		if f(node) {
+			filteredList = append(filteredList, node)
+		}
+	}
+	return filteredList
+}
+
 type Node struct {
 	Name          string
 	Attrs         *AttrMap
@@ -49,4 +61,8 @@ func FromStartTag(tag *Tag) *Node {
 		Children:      make([]*Node, 0, 8),
 		Siblings:      make([]*Node, 0, 8),
 	}
+}
+
+func (node *Node) Search(queryString string) (NodeList, error) {
+	return Search(node, queryString)
 }

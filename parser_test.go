@@ -26,7 +26,7 @@ func TestParser(t *testing.T) {
 		return
 	}
 	// PrintTree(cursor.Root)
-	l, err := Search(cursor.Root, "option[value='2015']")
+	l, err := Search(cursor.Root, ".table_info td")
 	if err != nil {
 		fmt.Println(err)
 		return
